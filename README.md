@@ -2,7 +2,7 @@
 
 A small-round, session-only driving-knowledge game. Learn a rule, understand the alternatives, and ask for a different direction. Built as a static project for `the-projects-i-tried`, with no backend, subscriptions, API keys, or tracking.
 
-**Release status:** the application is implemented and tested, but the complete question bank is **not freshly source-certified**. This release includes **226 authored question variants across 113 rule families**. **44 sign questions** were checked against accessible official NCDOT sign sheets. **182 questions** adapted from the preceding handbook-based quiz conversation still need a current full-handbook review because the PDF could not be retrieved during this build. They are marked accordingly in the app. Do not present this release as an official or completely verified exam-preparation product. See [Sources](docs/SOURCES.md) and the [review queue](docs/CONTENT_REVIEW.md).
+**Content review:** all **226 authored question variants across 113 rule families** were reviewed against the official handbook retrieved on **September 19, 2026**, including every answer choice, explanation, hint, summary, and relevant illustration. Each rule links to its handbook PDF page. “Source checked” records this editorial review; it is not NCDMV endorsement or certification of current law. Read the [page-by-page handbook reference](docs/NC_DRIVER_HANDBOOK.md), [review findings](docs/CONTENT_AUDIT.md), and [source identity and limitations](docs/SOURCES.md). New imports remain unverified.
 
 ![Road Ready practice screen](docs/preview.png)
 
@@ -87,7 +87,7 @@ Follow [PUBLISH.md](PUBLISH.md). The included workflow deploys only `site/` to G
 https://the-projects-i-tried.github.io/nc-road-ready/
 ```
 
-It can be linked from the organization's shared front page; it does not need a separate `github.io` repository. `?embed=1` removes the outer header and footer for an iframe. No GitHub repository or deployment was created as part of this downloadable bundle.
+It can be linked from the organization's shared front page; it does not need a separate `github.io` repository. `?embed=1` removes the outer header and footer for an iframe. The [repository](https://github.com/the-projects-i-tried/nc-road-ready) is published and GitHub Pages deploys from `main`.
 
 ## Development
 

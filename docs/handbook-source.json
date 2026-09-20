@@ -1,0 +1,16 @@
+{
+  "title": "North Carolina Driver Handbook",
+  "publisher": "North Carolina Division of Motor Vehicles",
+  "url": "https://www.ncdot.gov/dmv/license-id/driver-licenses/new-drivers/Documents/nc-driver-handbook.pdf",
+  "retrievedOn": "2026-09-19",
+  "sha256": "6c0fcb8f004e7fc34cea78de7167a055a3463601853135475265153c07808c0f",
+  "bytes": 7283104,
+  "pdfPages": 108,
+  "printedRevision": "Revised May 2025",
+  "printingNotation": "(09/25)",
+  "pdfCreationDate": "2026-04-22T05:35:17-04:00",
+  "pdfModificationDate": "2026-09-10T15:06:04-04:00",
+  "pagination": "PDF pages 3–107 correspond to printed pages 1–105. PDF pages 1–2 are the front cover and blank inside cover; PDF page 108 is the back cover.",
+  "extraction": "pdftotext -layout, followed by page-by-page factual paraphrase and direct visual inspection of relevant tables and figures. The Markdown is an informational extraction, not a verbatim transcription.",
+  "editionNote": "The printed revision and PDF metadata dates differ. Metadata dates are not treated as a new edition. This record identifies the bytes retrieved from the official URL, not an assurance that every statement in the handbook reflects current law."
+}

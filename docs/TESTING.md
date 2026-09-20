@@ -7,9 +7,9 @@ npm run build
 npm run check
 ```
 
-No dependency installation is required. The checks use Node's built-in test runner and standard library. The release was tested with Node v22.16.0.
+No dependency installation is required. The checks use Node's built-in test runner and standard library. The September 19, 2026 source-review update was checked locally with Node v25.8.1; GitHub Actions uses Node 22.
 
-**Release result: 39 passing Node tests, zero failures.** They cover the content format and inventory, source URL restrictions, duplicate and malformed packs, deterministic selection, bank exhaustion without exact repeats, explicit review, hard topic/difficulty filters, hint-aware progress, spaced/distinct-variant practice labels, adaptive weighting, deferred scoring, reset, safe imports, natural-language topic matching, generated bundle freshness, standalone CSP hashes, source/preview script equality, permanent pack addition, relative paths, local HTTP serving, and traversal rejection.
+**Current result: 43 passing Node tests, zero failures.** They cover the content format and inventory, source URL restrictions, duplicate and malformed packs, deterministic selection, bank exhaustion without exact repeats, explicit review, hard topic/difficulty filters, hint-aware progress, spaced/distinct-variant practice labels, adaptive weighting, deferred scoring, reset, safe imports, natural-language topic matching, generated bundle freshness, standalone CSP hashes, source/preview script equality, permanent pack addition, relative paths, local HTTP serving, and traversal rejection. New checks cover all 108 Markdown page entries, complete review evidence, rejection of changed reviewed wording/keys/citations/artwork, and rejection of permanent packs that claim or inherit source-checked status without their own evidence.
 
 These are software/data-integrity tests. They do not establish the factual correctness of a road rule, reproduce the official exam, or measure educational efficacy.
 
@@ -31,7 +31,7 @@ python tests/browser_smoke.py --chromium /path/to/chromium
 
 Add `--screenshots` to regenerate the three illustrations in `docs/`. They are screenshots of the actual running app, not design mockups. The test generates a temporary self-contained HTML copy and loads it with Playwright `set_content` in fresh browser contexts.
 
-**Release result: 13 passing browser workflows.**
+**Current result: 13 passing browser workflows.** The source-review update was exercised with Python 3.14.4, Playwright 1.63.0, and cached Chromium. The test also confirms source-page links, 226 checked questions at startup, 226 checked out of 227 after importing an unverified question, and restoration to 226 out of 226 after reset. The reset assertion caught and drove a fix for a stale review-status banner.
 
 | Workflow | Result |
 |---|---|
@@ -55,9 +55,9 @@ Wrong and correct answer backgrounds were also checked to be visually distinct. 
 
 The environment's managed-browser policy blocked direct `file://` and localhost navigation. The browser workflows therefore exercised the generated standalone copy via `set_content`, which runs the real engine, bank, UI, CSS, images, and content-security policy. The ordinary HTTP development server was separately tested from Node, but browser navigation to that server was not verified here.
 
-GitHub Pages deployment is configured but was **not executed**. No remote repository was created. Safari, Firefox, real iOS/Android devices, and embedded deployment on the organization's actual homepage were not tested. Keyboard focus, labels, responsive layouts, and non-color answer labels are implemented; this is not a formal accessibility compliance audit.
+The [GitHub repository](https://github.com/the-projects-i-tried/nc-road-ready) and [Pages site](https://the-projects-i-tried.github.io/nc-road-ready/) are published. The Pages workflow validates the bank before deployment. Browser workflow coverage above is for the generated standalone copy. Safari, Firefox, real iOS/Android devices, and embedded deployment on the organization's actual homepage were not tested. Keyboard focus, labels, responsive layouts, and non-color answer labels are implemented; this is not a formal accessibility compliance audit.
 
-The full handbook source review remains unresolved for 182 questions. That limitation is independent of the successful software tests. See [SOURCES.md](SOURCES.md).
+The original 182-question handbook backlog was resolved by reviewing the actual downloaded source. All 226 built-in questions now have documented evidence and PDF page citations. This editorial review is separate from successful software tests and does not certify every handbook statement as current law. See [SOURCES.md](SOURCES.md) and [CONTENT_AUDIT.md](CONTENT_AUDIT.md).
 
 ## Useful manual acceptance checks after deployment
 

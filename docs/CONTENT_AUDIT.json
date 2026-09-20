@@ -1,0 +1,3186 @@
+{
+  "reviewedOn": "2026-09-19",
+  "reviewer": "Codex-assisted editorial review, with independent second passes and final integration review; no NCDMV endorsement or separate human sign-off claimed.",
+  "source": {
+    "title": "North Carolina Driver Handbook",
+    "publisher": "North Carolina Division of Motor Vehicles",
+    "url": "https://www.ncdot.gov/dmv/license-id/driver-licenses/new-drivers/Documents/nc-driver-handbook.pdf",
+    "retrievedOn": "2026-09-19",
+    "sha256": "6c0fcb8f004e7fc34cea78de7167a055a3463601853135475265153c07808c0f",
+    "bytes": 7283104,
+    "pdfPages": 108,
+    "printedRevision": "Revised May 2025",
+    "printingNotation": "(09/25)",
+    "pdfCreationDate": "2026-04-22T05:35:17-04:00",
+    "pdfModificationDate": "2026-09-10T15:06:04-04:00",
+    "pagination": "PDF pages 3–107 correspond to printed pages 1–105. PDF pages 1–2 are the front cover and blank inside cover; PDF page 108 is the back cover.",
+    "extraction": "pdftotext -layout, followed by page-by-page factual paraphrase and direct visual inspection of relevant tables and figures. The Markdown is an informational extraction, not a verbatim transcription.",
+    "editionNote": "The printed revision and PDF metadata dates differ. Metadata dates are not treated as a new edition. This record identifies the bytes retrieved from the official URL, not an assurance that every statement in the handbook reflects current law."
+  },
+  "scope": [
+    "Every concept summary and source citation",
+    "Every question stem and keyed choice",
+    "All four choices and feedback explanations per question",
+    "Every hint and image description",
+    "Relevant handbook figures and all 22 bundled sign illustrations"
+  ],
+  "reviews": [
+    {
+      "conceptId": "bus-two-lane",
+      "questionIds": [
+        "bus-two-lane-1",
+        "bus-two-lane-2"
+      ],
+      "pdfPages": [
+        49
+      ],
+      "printedPages": [
+        47
+      ],
+      "finding": "Source confirms that when a school bus stops for passengers on a two-lane roadway, all traffic from both directions must stop.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 49; diagram shows stop signs for both directions on a two-lane roadway.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "bus-three-lane",
+      "questionIds": [
+        "bus-three-lane-1",
+        "bus-three-lane-2"
+      ],
+      "pdfPages": [
+        50
+      ],
+      "printedPages": [
+        48
+      ],
+      "finding": "Source confirms that one lane each way plus a center turning lane still requires all traffic from both directions to stop.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 50; top diagram shows stop signs for both directions on the two-lane plus center-turn-lane layout.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "bus-four-undivided",
+      "questionIds": [
+        "bus-four-undivided-1",
+        "bus-four-undivided-2"
+      ],
+      "pdfPages": [
+        50
+      ],
+      "printedPages": [
+        48
+      ],
+      "finding": "Source confirms that a four-lane roadway without a median separation requires all traffic from both directions to stop.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints. Edited awkward answer text so the correct choice directly answers the stem.",
+      "figureReview": "Rendered PDF page 50; four-lane no-median diagram shows stop signs on both sides of the bus.",
+      "secondPass": [
+        "bus-four-undivided-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "bus-four-undivided-1: made the relevant vehicle, signal, or roadway condition explicit in the stem."
+      ]
+    },
+    {
+      "conceptId": "bus-five-lane",
+      "questionIds": [
+        "bus-five-lane-1",
+        "bus-five-lane-2"
+      ],
+      "pdfPages": [
+        50
+      ],
+      "printedPages": [
+        48
+      ],
+      "finding": "Source confirms that on a roadway of four lanes or more with a center turning lane, only traffic following the bus must stop.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 50; bottom diagram shows stop signs only for vehicles following the bus.",
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "bus-five-lane-1: made the relevant vehicle, signal, or roadway condition explicit in the stem.",
+        "bus-five-lane-2: made the relevant vehicle, signal, or roadway condition explicit in the stem."
+      ]
+    },
+    {
+      "conceptId": "bus-median",
+      "questionIds": [
+        "bus-median-1",
+        "bus-median-2"
+      ],
+      "pdfPages": [
+        50
+      ],
+      "printedPages": [
+        48
+      ],
+      "finding": "Source confirms that on a divided highway of four lanes or more with a median separation, only traffic following the bus must stop.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 50; divided-highway diagram shows opposing traffic continuing across the median while following traffic stops.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "bus-following",
+      "questionIds": [
+        "bus-following-1",
+        "bus-following-2"
+      ],
+      "pdfPages": [
+        50
+      ],
+      "printedPages": [
+        48
+      ],
+      "finding": "Source confirms the exceptions are for opposing traffic; traffic following the bus must stop in the divided-highway and four-lanes-plus-center-turn-lane diagrams.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 50; both exception diagrams mark stop signs only behind/following the bus.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "bus-red-lights",
+      "questionIds": [
+        "bus-red-lights-1",
+        "bus-red-lights-2"
+      ],
+      "pdfPages": [
+        49
+      ],
+      "printedPages": [
+        47
+      ],
+      "finding": "Source confirms that a mechanical stop signal or flashing red lights while receiving or discharging passengers requires approaching drivers to stop and not pass.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 49; bus illustration supports the stop-signal context, while the text carries the rule.",
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "bus-red-lights-1: made the relevant vehicle, signal, or roadway condition explicit in the stem."
+      ]
+    },
+    {
+      "conceptId": "bus-resume",
+      "questionIds": [
+        "bus-resume-1",
+        "bus-resume-2"
+      ],
+      "pdfPages": [
+        49
+      ],
+      "printedPages": [
+        47
+      ],
+      "finding": "Source confirms drivers may not pass until the mechanical stop signal is withdrawn, red lights are off, and the bus has started to move.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 49; text reviewed; no additional geometry figure required.",
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "bus-resume-1: made the relevant vehicle, signal, or roadway condition explicit in the stem."
+      ]
+    },
+    {
+      "conceptId": "bus-speed",
+      "questionIds": [
+        "bus-speed-1",
+        "bus-speed-2"
+      ],
+      "pdfPages": [
+        49,
+        55
+      ],
+      "printedPages": [
+        47,
+        53
+      ],
+      "finding": "Source states the maximum speed limit for a school bus is 45 mph; the maximum-speed table repeats school buses 45 mph. General speed-limit text confirms posted and condition limits still matter.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "No figure required; checked text on PDF pages 49 and 55.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "activity-speed",
+      "questionIds": [
+        "activity-speed-1",
+        "activity-speed-2"
+      ],
+      "pdfPages": [
+        55
+      ],
+      "printedPages": [
+        53
+      ],
+      "finding": "Source maximum-speed table lists school activity buses at 55 mph.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "No figure required; checked text on PDF page 55.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "bus-tracks",
+      "questionIds": [
+        "bus-tracks-1",
+        "bus-tracks-2"
+      ],
+      "pdfPages": [
+        63
+      ],
+      "printedPages": [
+        61
+      ],
+      "finding": "Source warns drivers to be prepared to stop for vehicles that must stop at crossings, including school buses.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints. Tightened summary and feedback to match the handbook’s following-driver warning at railroad crossings.",
+      "figureReview": "No figure required for school-bus following rule; railroad text reviewed on PDF page 63.",
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "bus-tracks-1: made the relevant vehicle, signal, or roadway condition explicit in the stem."
+      ]
+    },
+    {
+      "conceptId": "bus-stop-vigilance",
+      "questionIds": [
+        "bus-stop-vigilance-1",
+        "bus-stop-vigilance-2"
+      ],
+      "pdfPages": [
+        49
+      ],
+      "printedPages": [
+        47
+      ],
+      "finding": "Source warns that children waiting for or leaving a bus might dart into traffic, and that children at bus stops may run into the street even when the bus is not in sight.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 49; bus image is decorative, rule is in adjacent text.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "stop-position",
+      "questionIds": [
+        "stop-position-1",
+        "stop-position-2"
+      ],
+      "pdfPages": [
+        85
+      ],
+      "printedPages": [
+        83
+      ],
+      "finding": "Source confirms stop signs require a full stop; if there is no stop line or marked crosswalk, stop before entering the intersection where there is a view of the intersecting street.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 85; stop-sign figure inspected, text carries the stopping-position rule.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "flashing-red",
+      "questionIds": [
+        "flashing-red-1",
+        "flashing-red-2"
+      ],
+      "pdfPages": [
+        83
+      ],
+      "printedPages": [
+        81
+      ],
+      "finding": "Source says a flashing red signal has the same meaning as a stop sign: stop and proceed only when the intersection can be entered without interfering with approaching traffic.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 83; no separate flashing-red figure needed beyond text.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "flashing-yellow",
+      "questionIds": [
+        "flashing-yellow-1",
+        "flashing-yellow-2"
+      ],
+      "pdfPages": [
+        83
+      ],
+      "printedPages": [
+        81
+      ],
+      "finding": "Source says a flashing yellow signal has the same meaning as a warning sign: slow down and proceed with caution.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 83; no separate flashing-yellow figure needed beyond text.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "steady-yellow",
+      "questionIds": [
+        "steady-yellow-1",
+        "steady-yellow-2"
+      ],
+      "pdfPages": [
+        82
+      ],
+      "printedPages": [
+        80
+      ],
+      "finding": "Source says circular yellow means caution and red is coming; stop unless too close to stop safely and never speed up to beat red.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 82; circular signal figures inspected.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "right-on-red",
+      "questionIds": [
+        "right-on-red-1",
+        "right-on-red-2"
+      ],
+      "pdfPages": [
+        82
+      ],
+      "printedPages": [
+        80
+      ],
+      "finding": "Source allows right turn on steady circular red after a complete stop unless a NO TURN ON RED sign is present, with yielding to traffic and pedestrians.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints. Expanded feedback to preserve the complete-stop, no-prohibiting-sign, and pedestrian/traffic yielding conditions.",
+      "figureReview": "Rendered PDF page 82; circular red figure inspected, text carries exceptions and yielding detail.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "circular-green-left",
+      "questionIds": [
+        "circular-green-left-1",
+        "circular-green-left-2"
+      ],
+      "pdfPages": [
+        82
+      ],
+      "printedPages": [
+        80
+      ],
+      "finding": "Source says circular green permits proceeding cautiously straight or turning, and turning vehicles must yield to oncoming traffic and pedestrians.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 82; circular green figure inspected.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "flashing-yellow-arrow",
+      "questionIds": [
+        "flashing-yellow-arrow-1",
+        "flashing-yellow-arrow-2"
+      ],
+      "pdfPages": [
+        83
+      ],
+      "printedPages": [
+        81
+      ],
+      "finding": "Source says a flashing yellow arrow permits the indicated turn but drivers must yield to oncoming traffic and pedestrians.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 83; flashing-yellow-arrow figure inspected, including left/right turn heads.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "red-arrow-combination",
+      "questionIds": [
+        "red-arrow-combination-1",
+        "red-arrow-combination-2"
+      ],
+      "pdfPages": [
+        83
+      ],
+      "printedPages": [
+        81
+      ],
+      "finding": "Source says when arrow and circular signals are both displayed, turning traffic is controlled by the arrow and through traffic by the circular signal; red arrow means turning traffic must stop.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints. Edited awkward answer text so the correct choice directly answers the stem.",
+      "figureReview": "Rendered PDF page 83; combination signal displays inspected.",
+      "secondPass": [
+        "red-arrow-combination-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "yellow-arrow",
+      "questionIds": [
+        "yellow-arrow-1",
+        "yellow-arrow-2"
+      ],
+      "pdfPages": [
+        82,
+        83
+      ],
+      "printedPages": [
+        80,
+        81
+      ],
+      "finding": "Source says a yellow arrow means the protected green-arrow signal is about to change; the flashing-yellow-arrow figure labels solid yellow arrow as prepare to stop.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints. Clarified that the steady yellow arrow warns a protected green-arrow signal is about to change and that drivers should prepare to stop.",
+      "figureReview": "Rendered PDF pages 82-83; steady yellow-arrow and arrow-head figures inspected.",
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "yellow-arrow-2: made the relevant vehicle, signal, or roadway condition explicit in the stem."
+      ]
+    },
+    {
+      "conceptId": "dark-intersection",
+      "questionIds": [
+        "dark-intersection-1",
+        "dark-intersection-2"
+      ],
+      "pdfPages": [
+        83
+      ],
+      "printedPages": [
+        81
+      ],
+      "finding": "Source says a malfunctioning traffic light should be treated as though controlled by stop signs on all approaches unless an officer/authorized person or another device is controlling traffic.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 83; text reviewed; no figure required.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "officer-controls",
+      "questionIds": [
+        "officer-controls-1",
+        "officer-controls-2"
+      ],
+      "pdfPages": [
+        90
+      ],
+      "printedPages": [
+        88
+      ],
+      "finding": "Source says to obey an officer’s hand signals instead of normal traffic signals or signs.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "No figure required; checked text on PDF page 90.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "ramp-dark",
+      "questionIds": [
+        "ramp-dark-1",
+        "ramp-dark-2"
+      ],
+      "pdfPages": [
+        84
+      ],
+      "printedPages": [
+        82
+      ],
+      "finding": "Source says when a ramp meter is dark or not emitting red or green, a vehicle may proceed without stopping and enter by merging or yielding as normal conditions allow.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 84; ramp meter red/green figure inspected, dark condition stated in text.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "ramp-red",
+      "questionIds": [
+        "ramp-red-1",
+        "ramp-red-2"
+      ],
+      "pdfPages": [
+        84
+      ],
+      "printedPages": [
+        82
+      ],
+      "finding": "Source says vehicles facing a circular red ramp-meter display must stop; figure caption says steady red means stop and wait for green.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "Rendered PDF page 84; ramp meter figure inspected.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "hybrid-flashing-red",
+      "questionIds": [
+        "hybrid-flashing-red-1",
+        "hybrid-flashing-red-2"
+      ],
+      "pdfPages": [
+        84
+      ],
+      "printedPages": [
+        82
+      ],
+      "finding": "Source says during flashing red, vehicles remain stopped until pedestrians or emergency response vehicles have cleared; after the crossing/intersection is clear and after first coming to a complete stop, vehicles may move while beacons flash red.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints. Broadened wording from pedestrian-only beacon language to the handbook’s hybrid-beacon coverage of pedestrians and emergency response vehicles; retained pedestrian scenarios.",
+      "figureReview": "Rendered PDF page 84; hybrid beacon sequence inspected, including alternating flashing-red phase.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "simultaneous-right",
+      "questionIds": [
+        "simultaneous-right-1",
+        "simultaneous-right-2"
+      ],
+      "pdfPages": [
+        59
+      ],
+      "printedPages": [
+        57
+      ],
+      "finding": "Source says when two or more vehicles reach an unsigned/unsignalized intersection at the same time, the vehicle to the right has the right of way.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "No figure required; checked text on PDF page 59.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "already-in-intersection",
+      "questionIds": [
+        "already-in-intersection-1",
+        "already-in-intersection-2"
+      ],
+      "pdfPages": [
+        59
+      ],
+      "printedPages": [
+        57
+      ],
+      "finding": "Source says the vehicle already in the intersection has the right of way ahead of any vehicle that has not yet entered.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints. Edited awkward answer text so the correct choice directly answers the stem.",
+      "figureReview": "No figure required; checked text on PDF page 59.",
+      "secondPass": [
+        "already-in-intersection-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "blind-intersection",
+      "questionIds": [
+        "blind-intersection-1",
+        "blind-intersection-2"
+      ],
+      "pdfPages": [
+        59
+      ],
+      "printedPages": [
+        57
+      ],
+      "finding": "Source says at unmarked intersections where it is hard to see in all directions, stop and then move forward slowly and cautiously.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "No figure required; checked text on PDF page 59.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "private-driveway",
+      "questionIds": [
+        "private-driveway-1",
+        "private-driveway-2"
+      ],
+      "pdfPages": [
+        59
+      ],
+      "printedPages": [
+        57
+      ],
+      "finding": "Source says when exiting a private driveway, stop and yield to all other vehicles and pedestrians.",
+      "changes": "Set concept reviewStatus to source-checked with handbook sourceId, smallest section, and one-based pdfPage. Replaced generic question hints with source-specific hints.",
+      "figureReview": "No figure required; checked text on PDF page 59.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "pedestrian-unmarked",
+      "questionIds": [
+        "pedestrian-unmarked-1",
+        "pedestrian-unmarked-2"
+      ],
+      "pdfPages": [
+        48
+      ],
+      "printedPages": [
+        46
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "pedestrian-finishing",
+      "questionIds": [
+        "pedestrian-finishing-1",
+        "pedestrian-finishing-2"
+      ],
+      "pdfPages": [
+        48
+      ],
+      "printedPages": [
+        46
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "secondPass": [
+        "pedestrian-finishing-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "blind-pedestrian",
+      "questionIds": [
+        "blind-pedestrian-1",
+        "blind-pedestrian-2"
+      ],
+      "pdfPages": [
+        48
+      ],
+      "printedPages": [
+        46
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "funeral-procession",
+      "questionIds": [
+        "funeral-procession-1",
+        "funeral-procession-2"
+      ],
+      "pdfPages": [
+        54
+      ],
+      "printedPages": [
+        52
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions. Added the handbook's exception that a non-procession driver may enter only if safe and without crossing the procession's path.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "secondPass": [
+        "funeral-procession-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "uturn-green-arrows",
+      "questionIds": [
+        "uturn-green-arrows-1",
+        "uturn-green-arrows-2"
+      ],
+      "pdfPages": [
+        82,
+        83
+      ],
+      "printedPages": [
+        80,
+        81
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "Rendered and inspected rendered PDF pages 82 and 83; arrow-signal figures/text confirm the simultaneous green-arrow U-turn/right-turn yield rule.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "roundabout-entry",
+      "questionIds": [
+        "roundabout-entry-1",
+        "roundabout-entry-2"
+      ],
+      "pdfPages": [
+        60,
+        61
+      ],
+      "printedPages": [
+        58,
+        59
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "Rendered and inspected rendered PDF pages 60 and 61; figures/text confirm circulating priority, outside crosswalks, and no passing bicyclists inside the roundabout.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "roundabout-exit-pedestrian",
+      "questionIds": [
+        "roundabout-exit-pedestrian-1",
+        "roundabout-exit-pedestrian-2"
+      ],
+      "pdfPages": [
+        61
+      ],
+      "printedPages": [
+        59
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "Rendered and inspected rendered PDF pages 60 and 61; figures/text confirm circulating priority, outside crosswalks, and no passing bicyclists inside the roundabout.",
+      "secondPass": [
+        "roundabout-exit-pedestrian-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "interstate-right",
+      "questionIds": [
+        "interstate-right-1",
+        "interstate-right-2"
+      ],
+      "pdfPages": [
+        66
+      ],
+      "printedPages": [
+        64
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "intersection-lane-change",
+      "questionIds": [
+        "intersection-lane-change-1",
+        "intersection-lane-change-2"
+      ],
+      "pdfPages": [
+        59
+      ],
+      "printedPages": [
+        57
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "lane-beyond",
+      "questionIds": [
+        "lane-beyond-1",
+        "lane-beyond-2"
+      ],
+      "pdfPages": [
+        56
+      ],
+      "printedPages": [
+        54
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "one-way-through",
+      "questionIds": [
+        "one-way-through-1",
+        "one-way-through-2"
+      ],
+      "pdfPages": [
+        65
+      ],
+      "printedPages": [
+        63
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "secondPass": [
+        "one-way-through-2: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "Specified three or more lanes in the summary and feedback so the recommendation does not assume a center lane on a two-lane street."
+      ]
+    },
+    {
+      "conceptId": "missed-turn-lane",
+      "questionIds": [
+        "missed-turn-lane-1",
+        "missed-turn-lane-2"
+      ],
+      "pdfPages": [
+        65
+      ],
+      "printedPages": [
+        63
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "center-turn-lane",
+      "questionIds": [
+        "center-turn-lane-1",
+        "center-turn-lane-2"
+      ],
+      "pdfPages": [
+        90
+      ],
+      "printedPages": [
+        88
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "Rendered and inspected rendered PDF page 90; pavement-marking text and diagram confirm yellow/white meanings and two-way left-turn lane markings.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "three-lane-passing",
+      "questionIds": [
+        "three-lane-passing-1",
+        "three-lane-passing-2"
+      ],
+      "pdfPages": [
+        57
+      ],
+      "printedPages": [
+        55
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "yellow-white-direction",
+      "questionIds": [
+        "yellow-white-direction-1",
+        "yellow-white-direction-2"
+      ],
+      "pdfPages": [
+        90
+      ],
+      "printedPages": [
+        88
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "Rendered and inspected rendered PDF page 90; pavement-marking text and diagram confirm yellow/white meanings and two-way left-turn lane markings.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "broken-yellow",
+      "questionIds": [
+        "broken-yellow-1",
+        "broken-yellow-2"
+      ],
+      "pdfPages": [
+        90
+      ],
+      "printedPages": [
+        88
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "Rendered and inspected rendered PDF page 90; pavement-marking text and diagram confirm yellow/white meanings and two-way left-turn lane markings.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "solid-side",
+      "questionIds": [
+        "solid-side-1",
+        "solid-side-2"
+      ],
+      "pdfPages": [
+        90
+      ],
+      "printedPages": [
+        88
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "Rendered and inspected rendered PDF page 90; pavement-marking text and diagram confirm yellow/white meanings and two-way left-turn lane markings.",
+      "secondPass": [
+        "solid-side-2: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "crosswalk-no-pass",
+      "questionIds": [
+        "crosswalk-no-pass-1",
+        "crosswalk-no-pass-2"
+      ],
+      "pdfPages": [
+        57
+      ],
+      "printedPages": [
+        55
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "secondPass": [
+        "crosswalk-no-pass-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "passing-return",
+      "questionIds": [
+        "passing-return-1",
+        "passing-return-2"
+      ],
+      "pdfPages": [
+        57
+      ],
+      "printedPages": [
+        55
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "secondPass": [
+        "passing-return-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "being-passed",
+      "questionIds": [
+        "being-passed-1",
+        "being-passed-2"
+      ],
+      "pdfPages": [
+        57
+      ],
+      "printedPages": [
+        55
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "secondPass": [
+        "being-passed-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "right-pass-one-way",
+      "questionIds": [
+        "right-pass-one-way-1",
+        "right-pass-one-way-2"
+      ],
+      "pdfPages": [
+        57
+      ],
+      "printedPages": [
+        55
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions. Added “otherwise lawful and safe” wording so the exception is not overbroad.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "right-pass-turning",
+      "questionIds": [
+        "right-pass-turning-1",
+        "right-pass-turning-2"
+      ],
+      "pdfPages": [
+        57
+      ],
+      "printedPages": [
+        55
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions. Added “otherwise lawful and safe” wording so the exception is not overbroad.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "right-pass-multilane",
+      "questionIds": [
+        "right-pass-multilane-1",
+        "right-pass-multilane-2"
+      ],
+      "pdfPages": [
+        57
+      ],
+      "printedPages": [
+        55
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions. Added “otherwise lawful and safe” wording so the exception is not overbroad.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "secondPass": [
+        "right-pass-multilane-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "turn-signal-distance",
+      "questionIds": [
+        "turn-signal-distance-1",
+        "turn-signal-distance-2"
+      ],
+      "pdfPages": [
+        71
+      ],
+      "printedPages": [
+        69
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "acceleration-lane",
+      "questionIds": [
+        "acceleration-lane-1",
+        "acceleration-lane-2"
+      ],
+      "pdfPages": [
+        66
+      ],
+      "printedPages": [
+        64
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "deceleration-lane",
+      "questionIds": [
+        "deceleration-lane-1",
+        "deceleration-lane-2"
+      ],
+      "pdfPages": [
+        66
+      ],
+      "printedPages": [
+        64
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "Preserved the normal handbook exit sequence without implying that drivers must maintain freeway speed despite hazards or drive exactly at an exit limit."
+      ]
+    },
+    {
+      "conceptId": "missed-exit",
+      "questionIds": [
+        "missed-exit-1",
+        "missed-exit-2"
+      ],
+      "pdfPages": [
+        67
+      ],
+      "printedPages": [
+        65
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "moving-emergency",
+      "questionIds": [
+        "moving-emergency-1",
+        "moving-emergency-2"
+      ],
+      "pdfPages": [
+        50
+      ],
+      "printedPages": [
+        48
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "emergency-divided-exception",
+      "questionIds": [
+        "emergency-divided-exception-1",
+        "emergency-divided-exception-2"
+      ],
+      "pdfPages": [
+        50
+      ],
+      "printedPages": [
+        48
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "move-over-multilane",
+      "questionIds": [
+        "move-over-multilane-1",
+        "move-over-multilane-2"
+      ],
+      "pdfPages": [
+        51
+      ],
+      "printedPages": [
+        49
+      ],
+      "finding": "Source checked against the official NC Driver Handbook, Revised May 2025 PDF. The concept is supported with the listed qualifications.",
+      "changes": "Set source metadata and review status; replaced generic hint with a source-specific cue; tightened summary and choice feedback to preserve handbook conditions. Added “within 12 feet of the roadway” and emergency/service vehicle scope from the source.",
+      "figureReview": "No figure needed; text passage was controlling.",
+      "secondPass": [
+        "move-over-multilane-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment.",
+        "move-over-multilane-2: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "move-over-single",
+      "questionIds": [
+        "move-over-single-1",
+        "move-over-single-2"
+      ],
+      "pdfPages": [
+        51
+      ],
+      "printedPages": [
+        49
+      ],
+      "finding": "Supported by the one-lane Move Over instruction on printed page 49.",
+      "changes": "Added the 12-foot/activated-light qualifier to the concept summary and replaced generic hints with the one-lane source condition.",
+      "figureReview": "No figure needed; reviewed the Move Over text block on PDF page 51.",
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "move-over-single-1: made the relevant vehicle, signal, or roadway condition explicit in the stem.",
+        "move-over-single-2: made the relevant vehicle, signal, or roadway condition explicit in the stem."
+      ]
+    },
+    {
+      "conceptId": "roundabout-emergency",
+      "questionIds": [
+        "roundabout-emergency-1",
+        "roundabout-emergency-2"
+      ],
+      "pdfPages": [
+        61
+      ],
+      "printedPages": [
+        59
+      ],
+      "finding": "Supported by the roundabout tips on printed page 59.",
+      "changes": "Made the concept summary track the handbook's enter-vs-already-inside distinction and replaced generic hints.",
+      "figureReview": "No figure needed; reviewed the roundabout text on PDF page 61.",
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "roundabout-emergency-2: made the relevant vehicle, signal, or roadway condition explicit in the stem."
+      ]
+    },
+    {
+      "conceptId": "fire-hose",
+      "questionIds": [
+        "fire-hose-1",
+        "fire-hose-2"
+      ],
+      "pdfPages": [
+        50
+      ],
+      "printedPages": [
+        48
+      ],
+      "finding": "Supported by the emergency-vehicle guidelines on printed page 48.",
+      "changes": "Tightened the summary and hints to the handbook's literal 'never drive' wording.",
+      "figureReview": "No figure needed; reviewed the emergency-vehicle text on PDF page 50.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "emergency-parking-distance",
+      "questionIds": [
+        "emergency-parking-distance-1",
+        "emergency-parking-distance-2"
+      ],
+      "pdfPages": [
+        50
+      ],
+      "printedPages": [
+        48
+      ],
+      "finding": "Supported by the emergency-vehicle guidelines on printed page 48.",
+      "changes": "Restored the handbook's 'investigate an accident or give assistance' phrasing and replaced generic hints.",
+      "figureReview": "No figure needed; reviewed the emergency-vehicle text on PDF page 50.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "fire-truck-distance",
+      "questionIds": [
+        "fire-truck-distance-1",
+        "fire-truck-distance-2"
+      ],
+      "pdfPages": [
+        50
+      ],
+      "printedPages": [
+        48
+      ],
+      "finding": "Supported by the emergency-vehicle guidelines on printed page 48.",
+      "changes": "Kept the one-block answer and made the hint distinguish it from the nearby 100-foot parking rule.",
+      "figureReview": "No figure needed; reviewed the emergency-vehicle text on PDF page 50.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "tire-blowout",
+      "questionIds": [
+        "tire-blowout-1",
+        "tire-blowout-2"
+      ],
+      "pdfPages": [
+        78
+      ],
+      "printedPages": [
+        76
+      ],
+      "finding": "Supported by the blowout instructions on printed page 76.",
+      "changes": "Expanded the summary and hints to preserve the order of the handbook's blowout steps.",
+      "figureReview": "No figure needed; reviewed the blowout text on PDF page 78.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "run-off-pavement",
+      "questionIds": [
+        "run-off-pavement-1",
+        "run-off-pavement-2"
+      ],
+      "pdfPages": [
+        79
+      ],
+      "printedPages": [
+        77
+      ],
+      "finding": "Supported by the run-off-pavement instructions on printed page 77.",
+      "changes": "Clarified that the handbook says stopped or nearly stopped before gradually returning, and replaced generic hints.",
+      "figureReview": "Rendered PDF page 79. It contains highlighted text, not a separate diagram; the rendered page confirms the shoulder-recovery sequence.",
+      "secondPass": [
+        "run-off-pavement-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment.",
+        "run-off-pavement-2: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "stuck-accelerator",
+      "questionIds": [
+        "stuck-accelerator-1",
+        "stuck-accelerator-2"
+      ],
+      "pdfPages": [
+        77
+      ],
+      "printedPages": [
+        75
+      ],
+      "finding": "Supported by the gas-pedal-sticks instructions on printed page 75.",
+      "changes": "Kept the emergency sequence and replaced generic hints with source-specific order.",
+      "figureReview": "No figure needed; reviewed the emergency text on PDF page 77.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "automatic-brake-failure",
+      "questionIds": [
+        "automatic-brake-failure-1",
+        "automatic-brake-failure-2"
+      ],
+      "pdfPages": [
+        77
+      ],
+      "printedPages": [
+        75
+      ],
+      "finding": "Supported by the brake-failure instructions on printed page 75.",
+      "changes": "Kept the answer and revised hints to highlight the automatic-transmission branch.",
+      "figureReview": "No figure needed; reviewed the emergency text on PDF page 77.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "manual-brake-failure",
+      "questionIds": [
+        "manual-brake-failure-1",
+        "manual-brake-failure-2"
+      ],
+      "pdfPages": [
+        77
+      ],
+      "printedPages": [
+        75
+      ],
+      "finding": "Supported by the brake-failure instructions on printed page 75.",
+      "changes": "Kept the answer and revised hints to highlight the manual-transmission branch.",
+      "figureReview": "No figure needed; reviewed the emergency text on PDF page 77.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "abs-stop",
+      "questionIds": [
+        "abs-stop-1",
+        "abs-stop-2"
+      ],
+      "pdfPages": [
+        68
+      ],
+      "printedPages": [
+        66
+      ],
+      "finding": "Supported by the ABS section on printed page 66.",
+      "changes": "Kept the answer and added a source-specific hint about pumping reducing ABS effectiveness.",
+      "figureReview": "No figure needed; reviewed the ABS text on PDF page 68.",
+      "secondPass": [
+        "abs-stop-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment.",
+        "abs-stop-2: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "non-abs-slippery",
+      "questionIds": [
+        "non-abs-slippery-1",
+        "non-abs-slippery-2"
+      ],
+      "pdfPages": [
+        79
+      ],
+      "printedPages": [
+        77
+      ],
+      "finding": "Supported by the skid-avoidance instructions on printed page 77.",
+      "changes": "Kept the answer and revised summary/hints to preserve the ABS contrast.",
+      "figureReview": "Rendered PDF page 79. It contains highlighted skid instructions, not a separate skid diagram; the rendered page confirms the ABS/non-ABS contrast.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "oncoming-in-lane",
+      "questionIds": [
+        "oncoming-in-lane-1",
+        "oncoming-in-lane-2"
+      ],
+      "pdfPages": [
+        78,
+        79
+      ],
+      "printedPages": [
+        76,
+        77
+      ],
+      "finding": "Supported by the unusual-emergency instructions spanning printed pages 76-77.",
+      "changes": "Kept the correct action and changed the hint to flag that the source passage spans two pages.",
+      "figureReview": "Rendered PDF page 79 for the continuation. It confirms the keep-right instruction; no separate diagram is present.",
+      "secondPass": [
+        "oncoming-in-lane-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment.",
+        "oncoming-in-lane-2: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "police-safe-stop",
+      "questionIds": [
+        "police-safe-stop-1",
+        "police-safe-stop-2"
+      ],
+      "pdfPages": [
+        51
+      ],
+      "printedPages": [
+        49
+      ],
+      "finding": "Supported by the law-enforcement-stop guidance on printed page 49.",
+      "changes": "Added the handbook's obey-all-traffic-laws condition to the summary and replaced generic hints.",
+      "figureReview": "No figure needed; reviewed the law-enforcement-stop text on PDF page 51.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "railroad-evacuate",
+      "questionIds": [
+        "railroad-evacuate-1",
+        "railroad-evacuate-2"
+      ],
+      "pdfPages": [
+        64
+      ],
+      "printedPages": [
+        62
+      ],
+      "finding": "Supported by the railroad-emergency instructions on printed page 62.",
+      "changes": "Preserved the handbook's evacuation-before-reporting order in hints and feedback.",
+      "figureReview": "Rendered PDF page 64. The Blue Sign figure is on the same page, but this concept rests on the adjacent evacuation text.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "railroad-ens",
+      "questionIds": [
+        "railroad-ens-1",
+        "railroad-ens-2"
+      ],
+      "pdfPages": [
+        64
+      ],
+      "printedPages": [
+        62
+      ],
+      "finding": "Supported by the ENS text and figure on printed page 62.",
+      "changes": "Rewrote the correct answer text for question 1 so it directly answers 'what should you use,' and added source-specific hints.",
+      "figureReview": "Rendered PDF page 64. The figure shows the blue ENS sign with emergency phone number and crossing ID, circled on the crossing equipment.",
+      "secondPass": [
+        "railroad-ens-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "train-priority",
+      "questionIds": [
+        "train-priority-1",
+        "train-priority-2"
+      ],
+      "pdfPages": [
+        62
+      ],
+      "printedPages": [
+        60
+      ],
+      "finding": "Supported by the railroad-crossing text on printed page 60.",
+      "changes": "Rewrote one correct answer so it answers 'which has right of way' directly.",
+      "figureReview": "No figure needed; reviewed the railroad-crossing text on PDF page 62.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "tire-change-passengers",
+      "questionIds": [
+        "tire-change-passengers-1",
+        "tire-change-passengers-2"
+      ],
+      "pdfPages": [
+        78
+      ],
+      "printedPages": [
+        76
+      ],
+      "finding": "Supported by the flat-tire precautions on printed page 76.",
+      "changes": "Expanded the summary to include both the passenger-side exit and the front/rear exclusion.",
+      "figureReview": "No figure needed; reviewed the blowout/tire-change text on PDF page 78.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "rain-headlights",
+      "questionIds": [
+        "rain-headlights-1",
+        "rain-headlights-2"
+      ],
+      "pdfPages": [
+        75
+      ],
+      "printedPages": [
+        73
+      ],
+      "finding": "Supported by the windshield-wipers/headlights section on printed page 73.",
+      "changes": "Rewrote one correct answer so it answers the 'when' stem directly and labeled the rule as required.",
+      "figureReview": "No figure needed; reviewed the weather text on PDF page 75.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "first-rain",
+      "questionIds": [
+        "first-rain-1",
+        "first-rain-2"
+      ],
+      "pdfPages": [
+        74
+      ],
+      "printedPages": [
+        72
+      ],
+      "finding": "Supported by the rain section on printed page 72.",
+      "changes": "Rewrote one correct answer to answer the 'why' stem directly and added the handbook's 10-15 minute qualifier.",
+      "figureReview": "No figure needed; reviewed the rain text on PDF page 74.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "hydroplaning",
+      "questionIds": [
+        "hydroplaning-1",
+        "hydroplaning-2"
+      ],
+      "pdfPages": [
+        74
+      ],
+      "printedPages": [
+        72
+      ],
+      "finding": "Supported by the hydroplaning section on printed page 72.",
+      "changes": "Kept the answer and revised hints to the handbook's recovery wording.",
+      "figureReview": "No figure needed; reviewed the hydroplaning text on PDF page 74.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "wet-brakes",
+      "questionIds": [
+        "wet-brakes-1",
+        "wet-brakes-2"
+      ],
+      "pdfPages": [
+        77
+      ],
+      "printedPages": [
+        75
+      ],
+      "finding": "Supported by the wet-brakes instructions on printed page 75.",
+      "changes": "Kept the answer and replaced generic hints with the source's friction/heat explanation.",
+      "figureReview": "No figure needed; reviewed the emergency text on PDF page 77.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "rear-skid",
+      "questionIds": [
+        "rear-skid-1",
+        "rear-skid-2"
+      ],
+      "pdfPages": [
+        79
+      ],
+      "printedPages": [
+        77
+      ],
+      "finding": "Supported by the skid-recovery instructions on printed page 77.",
+      "changes": "Kept the answer and added the return-steering qualifier to the summary.",
+      "figureReview": "Rendered PDF page 79. The skid instructions are highlighted text; no separate skid diagram is present.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "follow-two-seconds",
+      "questionIds": [
+        "follow-two-seconds-1",
+        "follow-two-seconds-2"
+      ],
+      "pdfPages": [
+        56
+      ],
+      "printedPages": [
+        54
+      ],
+      "finding": "Supported by the following section on printed page 54.",
+      "changes": "Kept the answer and replaced generic hints with the fixed-point measurement method.",
+      "figureReview": "No figure needed; reviewed the following-distance text on PDF page 56.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "wet-following",
+      "questionIds": [
+        "wet-following-1",
+        "wet-following-2"
+      ],
+      "pdfPages": [
+        74
+      ],
+      "printedPages": [
+        72
+      ],
+      "finding": "Supported by the rain section on printed page 72.",
+      "changes": "Expanded the summary to include the handbook's two-to-10-times stopping-distance qualifier.",
+      "figureReview": "No figure needed; reviewed the rain text on PDF page 74.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "city-speed",
+      "questionIds": [
+        "city-speed-1",
+        "city-speed-2"
+      ],
+      "pdfPages": [
+        55
+      ],
+      "printedPages": [
+        53
+      ],
+      "finding": "Supported by the speed-limit text and table on printed page 53.",
+      "changes": "Kept the answer and replaced generic hints with a table-specific hint.",
+      "figureReview": "Rendered PDF page 55. The maximum-speed table confirms 35 mph for cities and towns.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "stopping-distance-55",
+      "questionIds": [
+        "stopping-distance-55-1",
+        "stopping-distance-55-2"
+      ],
+      "pdfPages": [
+        55
+      ],
+      "printedPages": [
+        53
+      ],
+      "finding": "Supported by the speed section on printed page 53.",
+      "changes": "Kept the answer and clarified in hints/summary that the 211 feet is approximate and ideal-condition.",
+      "figureReview": "Rendered PDF page 55. There is no stopping-distance chart on this page; the 211-foot claim appears as body text.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "motorcycle-pass",
+      "questionIds": [
+        "motorcycle-pass-1",
+        "motorcycle-pass-2"
+      ],
+      "pdfPages": [
+        94
+      ],
+      "printedPages": [
+        92
+      ],
+      "finding": "Supported by the motorcycles-and-mopeds section on printed page 92.",
+      "changes": "Rewrote one correct answer so it answers a 'how should you pass' stem without beginning with 'No.'",
+      "figureReview": "No figure needed; reviewed the motorcycle text on PDF page 94.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "bicycle-pass",
+      "questionIds": [
+        "bicycle-pass-1",
+        "bicycle-pass-2"
+      ],
+      "pdfPages": [
+        92
+      ],
+      "printedPages": [
+        90
+      ],
+      "finding": "Supported by the bicycle pass-with-care section on printed page 90.",
+      "changes": "Added 'no oncoming traffic in the opposing lane' to the correct answer/summary and replaced generic hints.",
+      "figureReview": "No figure needed; reviewed the bicycle passing text on PDF page 92.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "wrong-way-edge-lines",
+      "questionIds": [
+        "wrong-way-edge-lines-1",
+        "wrong-way-edge-lines-2"
+      ],
+      "pdfPages": [
+        90
+      ],
+      "printedPages": [
+        88
+      ],
+      "finding": "Supported by the pavement-markings section on printed page 88.",
+      "changes": "Kept the answer and replaced generic hints with the color-position rule.",
+      "figureReview": "Rendered PDF page 90. The page includes a pavement-marking diagram for two-way left-turn lanes and the adjacent text confirms the edge-line wrong-way rule.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "red-reflectors",
+      "questionIds": [
+        "red-reflectors-1",
+        "red-reflectors-2"
+      ],
+      "pdfPages": [
+        90
+      ],
+      "printedPages": [
+        88
+      ],
+      "finding": "Supported by the pavement-markings section on printed page 88.",
+      "changes": "Kept the answer and made the hint distinguish red wrong-way markers from blue fire-supply markers.",
+      "figureReview": "Rendered PDF page 90. The relevant red/blue marker claim is text on the rendered page; no separate reflector figure is present.",
+      "independentSecondPass": true,
+      "integrationNotes": [
+        "red-reflectors-2: made the relevant vehicle, signal, or roadway condition explicit in the stem."
+      ]
+    },
+    {
+      "conceptId": "sign-stop",
+      "questionIds": [
+        "sign-stop-1",
+        "sign-stop-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 shows the red octagonal STOP sign; local SVG renders as a red octagon with STOP text and matches the recognizable shape and legend.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-yield",
+      "questionIds": [
+        "sign-yield-1",
+        "sign-yield-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 shows the red-and-white downward triangle YIELD sign; local SVG renders the same shape and legend.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-do-not-enter",
+      "questionIds": [
+        "sign-do-not-enter-1",
+        "sign-do-not-enter-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 shows DO NOT ENTER with a red circle and white horizontal bar on a white rectangle; local SVG renders the same elements.",
+      "secondPass": [
+        "sign-do-not-enter-1: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment.",
+        "sign-do-not-enter-2: independently reviewed and corrected for precise scope, safety instruction, or stem/choice alignment."
+      ],
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-no-left",
+      "questionIds": [
+        "sign-no-left-1",
+        "sign-no-left-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 shows a left-turn arrow crossed by a red circle and slash; local SVG renders the same prohibited movement.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-no-uturn",
+      "questionIds": [
+        "sign-no-uturn-1",
+        "sign-no-uturn-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 shows the No U Turns symbol with a U-turn arrow crossed by a red circle and slash; local SVG renders the same prohibited movement.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-left-only",
+      "questionIds": [
+        "sign-left-only-1",
+        "sign-left-only-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 labels this sign Left Turn Only, with a left-turn arrow and ONLY; local SVG renders the arrow and ONLY text.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-straight-left",
+      "questionIds": [
+        "sign-straight-left-1",
+        "sign-straight-left-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; minor wording/label mismatch corrected.",
+      "changes": "Updated source citation to the current handbook page; aligned title, summary, feedback, and asset description with the handbook label THRU & LEFT; replaced generic sign hints.",
+      "figureReview": "Official page 88 labels this sign Thru & Left, with a through arrow and a left branch; local SVG renders that combined movement symbol.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-keep-right",
+      "questionIds": [
+        "sign-keep-right-1",
+        "sign-keep-right-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 shows Keep Right with the arrow passing to the right of the divider; local SVG renders the same direction around the divider.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-one-way",
+      "questionIds": [
+        "sign-one-way-1",
+        "sign-one-way-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 includes a black ONE WAY sign with a right-pointing arrow; local SVG renders a right-pointing ONE WAY sign.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-no-pass",
+      "questionIds": [
+        "sign-no-pass-1",
+        "sign-no-pass-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 shows a white DO NOT PASS sign; local SVG renders the same legend.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-keep-off-median",
+      "questionIds": [
+        "sign-keep-off-median-1",
+        "sign-keep-off-median-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 shows KEEP OFF MEDIAN; local SVG renders the same legend.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-no-stop-tracks",
+      "questionIds": [
+        "sign-no-stop-tracks-1",
+        "sign-no-stop-tracks-2"
+      ],
+      "pdfPages": [
+        88
+      ],
+      "printedPages": [
+        86
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 88 shows DO NOT STOP ON TRACKS and the text below states it reminds drivers not to stop on the railroad track for any reason; local SVG renders the same legend.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-rr-ahead",
+      "questionIds": [
+        "sign-rr-ahead-1",
+        "sign-rr-ahead-2"
+      ],
+      "pdfPages": [
+        89
+      ],
+      "printedPages": [
+        87
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 89 labels the yellow circular RR/X sign Railroad Crossing; local SVG renders a yellow circle with black crossbuck and R R letters.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-no-passing-zone",
+      "questionIds": [
+        "sign-no-passing-zone-1",
+        "sign-no-passing-zone-2"
+      ],
+      "pdfPages": [
+        89
+      ],
+      "printedPages": [
+        87
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 89 shows a yellow pennant labeled NO PASSING ZONE; local SVG renders the same pennant and legend.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-stop-ahead",
+      "questionIds": [
+        "sign-stop-ahead-1",
+        "sign-stop-ahead-2"
+      ],
+      "pdfPages": [
+        89
+      ],
+      "printedPages": [
+        87
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 89 shows Stop Ahead as a yellow diamond with an arrow over a red octagon; local SVG renders the same warning symbol.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-signal-ahead",
+      "questionIds": [
+        "sign-signal-ahead-1",
+        "sign-signal-ahead-2"
+      ],
+      "pdfPages": [
+        89
+      ],
+      "printedPages": [
+        87
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 89 shows Signal Ahead as a yellow diamond with a traffic signal; local SVG renders the signal colors inside a yellow diamond.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-merge",
+      "questionIds": [
+        "sign-merge-1",
+        "sign-merge-2"
+      ],
+      "pdfPages": [
+        89
+      ],
+      "printedPages": [
+        87
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 89 labels the joining-arrow warning Merging Traffic; local SVG renders a branch joining the through movement.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-lane-drop",
+      "questionIds": [
+        "sign-lane-drop-1",
+        "sign-lane-drop-2"
+      ],
+      "pdfPages": [
+        89
+      ],
+      "printedPages": [
+        87
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 89 labels the tapering lane symbol Lane Drop; local SVG renders the same lane-ending geometry.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-two-way",
+      "questionIds": [
+        "sign-two-way-1",
+        "sign-two-way-2"
+      ],
+      "pdfPages": [
+        89
+      ],
+      "printedPages": [
+        87
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 89 labels opposing up/down arrows Two Way Traffic; local SVG renders opposing vertical arrows.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-soft-shoulder",
+      "questionIds": [
+        "sign-soft-shoulder-1",
+        "sign-soft-shoulder-2"
+      ],
+      "pdfPages": [
+        89
+      ],
+      "printedPages": [
+        87
+      ],
+      "finding": "Confirmed against current handbook figure; existing meaning, choices, feedback, key, and local artwork are defensible.",
+      "changes": "Updated source citation from the older standalone sign sheet to the current handbook page and replaced the generic hint with a sign-recognition hint; no factual or key changes.",
+      "figureReview": "Official page 89 shows SOFT SHOULDER text on a yellow diamond; local SVG renders the same legend.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-low-clearance",
+      "questionIds": [
+        "sign-low-clearance-1",
+        "sign-low-clearance-2"
+      ],
+      "pdfPages": [
+        89
+      ],
+      "printedPages": [
+        87
+      ],
+      "finding": "Confirmed against current handbook figure; minor wording/label mismatch corrected.",
+      "changes": "Updated source citation to the current handbook page; corrected wording to vertical clearance and asset description to the official 12'-6\" notation; replaced generic sign hints.",
+      "figureReview": "Official page 89 shows Low Clearance with vertical arrows and 12'-6\"; local SVG renders the same symbol and posted height.",
+      "independentSecondPass": true
+    },
+    {
+      "conceptId": "sign-crossroad",
+      "questionIds": [
+        "sign-crossroad-1",
+        "sign-crossroad-2"
+      ],
+      "pdfPages": [
+        89
+      ],
+      "printedPages": [
+        87
+      ],
+      "finding": "Confirmed against current handbook figure; minor wording/label mismatch corrected.",
+      "changes": "Updated source citation to the current handbook page; aligned title, summary, answer text, feedback, and tags with the handbook label Cross Road; replaced generic sign hints.",
+      "figureReview": "Official page 89 labels the black cross on a yellow diamond Cross Road; local SVG renders the same cross symbol.",
+      "independentSecondPass": true
+    }
+  ],
+  "questions": [
+    {
+      "id": "bus-two-lane-1",
+      "conceptId": "bus-two-lane",
+      "digest": "1a6f91cc3d56e7adea9c062c43724de441b7376828c6f30abac48ab8a70296b1"
+    },
+    {
+      "id": "bus-two-lane-2",
+      "conceptId": "bus-two-lane",
+      "digest": "64b78272cefdf7456997fd08615323e473974a3ab747a0fe39d1e2b3f9d00556"
+    },
+    {
+      "id": "bus-three-lane-1",
+      "conceptId": "bus-three-lane",
+      "digest": "fbeabee567e8694f80132585ac2ed7e61cbae5264e88ab829c8d308ca0416d4f"
+    },
+    {
+      "id": "bus-three-lane-2",
+      "conceptId": "bus-three-lane",
+      "digest": "5708dada82f72e55036a3d14d2ed79ddada06e019e305530196f329824670750"
+    },
+    {
+      "id": "bus-four-undivided-1",
+      "conceptId": "bus-four-undivided",
+      "digest": "a733948cf1e794e0518a1db8f888120d65737f03423bfd256255310fc51cfe13"
+    },
+    {
+      "id": "bus-four-undivided-2",
+      "conceptId": "bus-four-undivided",
+      "digest": "b69b59725212cb01daed7cafb1c465dc34218be24025e825d5cbfac8039b14bc"
+    },
+    {
+      "id": "bus-five-lane-1",
+      "conceptId": "bus-five-lane",
+      "digest": "a36691e0303d0fff706dc5fedd540b2df0250055e23854827b49116942c028fa"
+    },
+    {
+      "id": "bus-five-lane-2",
+      "conceptId": "bus-five-lane",
+      "digest": "77dbfe27bec6f901d46b65906e760cee6d83c0e39f23d696d2fe87253718a5f7"
+    },
+    {
+      "id": "bus-median-1",
+      "conceptId": "bus-median",
+      "digest": "8fb18990b36702bc50f7b4a244956bf1bf45a435ef6c1f2bc0b7c4ed5bac7157"
+    },
+    {
+      "id": "bus-median-2",
+      "conceptId": "bus-median",
+      "digest": "29939377e3bc0c5b325a3d3c907f5c39ddf7501d697f523abc14b3b53a37d711"
+    },
+    {
+      "id": "bus-following-1",
+      "conceptId": "bus-following",
+      "digest": "555bfa639f30a38d8e2b841625a9ea0fdcf9568017ff1c9fc6375813cc612901"
+    },
+    {
+      "id": "bus-following-2",
+      "conceptId": "bus-following",
+      "digest": "6e68fc9a35582ec6cc4af1805a544a5626b74ec7ecaaa9718b91b50a5bf5d503"
+    },
+    {
+      "id": "bus-red-lights-1",
+      "conceptId": "bus-red-lights",
+      "digest": "491513bc79a8dfb1d7589025ca546601d9bcbf08b18e89a92f06a3c3efefa2dc"
+    },
+    {
+      "id": "bus-red-lights-2",
+      "conceptId": "bus-red-lights",
+      "digest": "2fd5ef835fb222393bf6d9113b9d338f174d9843f167315a702d186a6b08326a"
+    },
+    {
+      "id": "bus-resume-1",
+      "conceptId": "bus-resume",
+      "digest": "e6270ea0a38ee25b52ffdbfcf4bbe79ff3ae64b120e6af6a226fd5ae55255f3e"
+    },
+    {
+      "id": "bus-resume-2",
+      "conceptId": "bus-resume",
+      "digest": "09e700f96e99e6d1596ccbb0c67ced7feebe583467a84755914992fc20812b5e"
+    },
+    {
+      "id": "bus-speed-1",
+      "conceptId": "bus-speed",
+      "digest": "fbc39d2ea4a49708fe8798b505d02fbe6b06e7da14183e943788de3441636246"
+    },
+    {
+      "id": "bus-speed-2",
+      "conceptId": "bus-speed",
+      "digest": "5e0bcc53ebdfc5070dbf6423729db6c3f9c5cc7e281c524c1004930185b5bcc0"
+    },
+    {
+      "id": "activity-speed-1",
+      "conceptId": "activity-speed",
+      "digest": "24ac06c1499c8781d7294a934106a52a5bd45deadbb42b2cc806b9a7f4254749"
+    },
+    {
+      "id": "activity-speed-2",
+      "conceptId": "activity-speed",
+      "digest": "add770d42fe865f5d553a42fd540923d9f813bf0e41ae7a2c68a757624e1d371"
+    },
+    {
+      "id": "bus-tracks-1",
+      "conceptId": "bus-tracks",
+      "digest": "fb3cf5541d89b99aa565d07a6d5fb93b067bab572caef4a46322e850a815cd06"
+    },
+    {
+      "id": "bus-tracks-2",
+      "conceptId": "bus-tracks",
+      "digest": "c61a0cb1b473433a82d0ca1159971ac326dec0a788ca4a2a942acd3350afdf83"
+    },
+    {
+      "id": "bus-stop-vigilance-1",
+      "conceptId": "bus-stop-vigilance",
+      "digest": "b076ac25e4f1212a967c8e94aaf976ef4b4de6ea7345c00e74608c1832bdc6e7"
+    },
+    {
+      "id": "bus-stop-vigilance-2",
+      "conceptId": "bus-stop-vigilance",
+      "digest": "016e6215acef1238d70e0b40791d4f9ece5c0ca41cc61759db25a3e5604a6675"
+    },
+    {
+      "id": "stop-position-1",
+      "conceptId": "stop-position",
+      "digest": "abbeb85b1388c228fbab6acd8a3f9a4903ea8266a3058e40c52fda968dfeeabf"
+    },
+    {
+      "id": "stop-position-2",
+      "conceptId": "stop-position",
+      "digest": "ef754c2073937e2ac411634a832b3c99dcd25fce7f0ebc800c19dabcb7fa6424"
+    },
+    {
+      "id": "flashing-red-1",
+      "conceptId": "flashing-red",
+      "digest": "a692c0033e1d7ad33dc18091e8595d3ec137988e014704d2d05f05ce5df25828"
+    },
+    {
+      "id": "flashing-red-2",
+      "conceptId": "flashing-red",
+      "digest": "6799a424317c222addcce900bf5374623fd54ce74f62ecce4b48e94dbdbb7007"
+    },
+    {
+      "id": "flashing-yellow-1",
+      "conceptId": "flashing-yellow",
+      "digest": "27e0fe9e0c08230cdf2bb5811a7679952d7d55d2d48ccc6f30a8aa116d9cb1f1"
+    },
+    {
+      "id": "flashing-yellow-2",
+      "conceptId": "flashing-yellow",
+      "digest": "b5f3bb268573f3ace1acb625a26acaa75d3cd6e4d415f8d78a0a0ff27f591a93"
+    },
+    {
+      "id": "steady-yellow-1",
+      "conceptId": "steady-yellow",
+      "digest": "868ae894c17f480768bc6ddf54d17ec25da47d6c53c8507fdb63289d8cb96f0b"
+    },
+    {
+      "id": "steady-yellow-2",
+      "conceptId": "steady-yellow",
+      "digest": "0a66a6fb47cb7c4a4f76ad1c9328c33e445f8585c56cb87c1019f89fbf2779f3"
+    },
+    {
+      "id": "right-on-red-1",
+      "conceptId": "right-on-red",
+      "digest": "be7de5e557362e9aff82b9d218f1753592a1dd57d1de2fbb9f116d58fdc84ffc"
+    },
+    {
+      "id": "right-on-red-2",
+      "conceptId": "right-on-red",
+      "digest": "09aaeb0a52fcffaf457b9119f5bd2acbb52a6ea2d3fc29f5877f8cf374bd036c"
+    },
+    {
+      "id": "circular-green-left-1",
+      "conceptId": "circular-green-left",
+      "digest": "1f1ec22f6f34d3e93b15e5e84633f0c8c9494f4608f91688fc98ab3b88b95c94"
+    },
+    {
+      "id": "circular-green-left-2",
+      "conceptId": "circular-green-left",
+      "digest": "824ab447f4a811eaad22be55e3ac7f3f6feac8b9528a789cc480dd5b939d724c"
+    },
+    {
+      "id": "flashing-yellow-arrow-1",
+      "conceptId": "flashing-yellow-arrow",
+      "digest": "c5feaff02ef5d6082cf28aac22b47ca21603117990156d549862ae00e78fa335"
+    },
+    {
+      "id": "flashing-yellow-arrow-2",
+      "conceptId": "flashing-yellow-arrow",
+      "digest": "c310a537949adb008eaf6b0f6642484556c43d9dc17f332f6578a01b655c5f63"
+    },
+    {
+      "id": "red-arrow-combination-1",
+      "conceptId": "red-arrow-combination",
+      "digest": "5ca924a3ce3ba80249a31f93b0fc32cf086b35cb4484512aae4aac5eff028f68"
+    },
+    {
+      "id": "red-arrow-combination-2",
+      "conceptId": "red-arrow-combination",
+      "digest": "08819ad23e60e133d89e57c75f39ff53d2c5c79c90d21b5d7fe591df59ce86b4"
+    },
+    {
+      "id": "yellow-arrow-1",
+      "conceptId": "yellow-arrow",
+      "digest": "9a5855824f45b66441f4734c5724cef0a93a2139f8d29678a477e547ee0c3a48"
+    },
+    {
+      "id": "yellow-arrow-2",
+      "conceptId": "yellow-arrow",
+      "digest": "a09bdce7c69c3fc5ee70ac8ea27ebf3b85490cd776e44933269f4939e03bd1f9"
+    },
+    {
+      "id": "dark-intersection-1",
+      "conceptId": "dark-intersection",
+      "digest": "c04beb4547ac47ecff680875559e93a5eea6420117da2cf8d7e7fd200fa50fa2"
+    },
+    {
+      "id": "dark-intersection-2",
+      "conceptId": "dark-intersection",
+      "digest": "948a2e0439cde3110d6ca4fe75b597018ed9b280b21df0051418932277dc92b9"
+    },
+    {
+      "id": "officer-controls-1",
+      "conceptId": "officer-controls",
+      "digest": "05bd7a6ba4614a94fe69ad80aad78228546157fae66807f60dbbf230299b64b7"
+    },
+    {
+      "id": "officer-controls-2",
+      "conceptId": "officer-controls",
+      "digest": "ac0d8fe8bb960d5107a3c59522192472954a1159c20decccc4dda03809993cb0"
+    },
+    {
+      "id": "ramp-dark-1",
+      "conceptId": "ramp-dark",
+      "digest": "a3283e8f12ae5f8bb4ead6b33dd8fd1e47643fd592fbee6f66f879238156b003"
+    },
+    {
+      "id": "ramp-dark-2",
+      "conceptId": "ramp-dark",
+      "digest": "6ec6c3143edb35f46b84eb2b3582875e5c84867ee840a1590113949805814a51"
+    },
+    {
+      "id": "ramp-red-1",
+      "conceptId": "ramp-red",
+      "digest": "0dcad8c22642df125ec7963e1cfd2236b92a4a4a91f61e91d4be9d73042152a7"
+    },
+    {
+      "id": "ramp-red-2",
+      "conceptId": "ramp-red",
+      "digest": "e85aed8190d30ffaa29c51215a7ecf5da8fa23e00290b2df64aa938693f60d87"
+    },
+    {
+      "id": "hybrid-flashing-red-1",
+      "conceptId": "hybrid-flashing-red",
+      "digest": "8a14cf9215ab530cb8effc250e61a5430fe1ecbcd4bde0a724355c18c7de744d"
+    },
+    {
+      "id": "hybrid-flashing-red-2",
+      "conceptId": "hybrid-flashing-red",
+      "digest": "92fa02f73c8ece07a816f24a5c0cc8fb384b86cf839fb9ea27bc0a302d05a52d"
+    },
+    {
+      "id": "simultaneous-right-1",
+      "conceptId": "simultaneous-right",
+      "digest": "0bc6347db33166af08911f51dd14389046e2253c411e7a7a1feb85d4d845aa2d"
+    },
+    {
+      "id": "simultaneous-right-2",
+      "conceptId": "simultaneous-right",
+      "digest": "c53ef8edd95f2243cc5abefdd78b1c90c43ffd3c15d5d4c51e01435f52c5f9e9"
+    },
+    {
+      "id": "already-in-intersection-1",
+      "conceptId": "already-in-intersection",
+      "digest": "93f74d0d88090072668f214542b71e0b2a890c3b8a840ef5018cbbf437b116ee"
+    },
+    {
+      "id": "already-in-intersection-2",
+      "conceptId": "already-in-intersection",
+      "digest": "24ac9762096dd39edabdfd8b1bea5b3aedd16a96cc63c7a7d882ddc100a1ec48"
+    },
+    {
+      "id": "blind-intersection-1",
+      "conceptId": "blind-intersection",
+      "digest": "00edaefb475123918f94c4907b29ac8e0b2575e523d647822f40a35af45a74c4"
+    },
+    {
+      "id": "blind-intersection-2",
+      "conceptId": "blind-intersection",
+      "digest": "5d839d75b0142a36bf093a377c1dd74fb75d9138212ea04b3dc20aa310c2e7c9"
+    },
+    {
+      "id": "private-driveway-1",
+      "conceptId": "private-driveway",
+      "digest": "9c024b02c53623e92562abcc7b2190bc25ff22e0715755ec9a6b362a72a09eed"
+    },
+    {
+      "id": "private-driveway-2",
+      "conceptId": "private-driveway",
+      "digest": "323214604c6afc44e6478f1db019a8d51eb21f9523c0368acce03af74f55319f"
+    },
+    {
+      "id": "pedestrian-unmarked-1",
+      "conceptId": "pedestrian-unmarked",
+      "digest": "77e7c2f8c0126535416fde98206cea41c6ebf0d6341a5f81451655f62248c37f"
+    },
+    {
+      "id": "pedestrian-unmarked-2",
+      "conceptId": "pedestrian-unmarked",
+      "digest": "b88787848d3162c437a980c4d21d15343aea30d81ac90d2600fd5c13d8884d2f"
+    },
+    {
+      "id": "pedestrian-finishing-1",
+      "conceptId": "pedestrian-finishing",
+      "digest": "2c18701760958da38707c2b5812a6d5c4322b2ebf7251eebf21445ee11a6bf32"
+    },
+    {
+      "id": "pedestrian-finishing-2",
+      "conceptId": "pedestrian-finishing",
+      "digest": "ad20dc3b2207e19465428255f336b5e7e8e4edfff51be8741400f2dfc7db6281"
+    },
+    {
+      "id": "blind-pedestrian-1",
+      "conceptId": "blind-pedestrian",
+      "digest": "5574b89d3d8e8fc3eb3b3c80a270c20e7fd237ccb8f4b9224a155c31d255ca14"
+    },
+    {
+      "id": "blind-pedestrian-2",
+      "conceptId": "blind-pedestrian",
+      "digest": "a6f7b6a684f2dc387b7d1484a5316774e923dc017b2d4c213d90fdb8182fbcff"
+    },
+    {
+      "id": "funeral-procession-1",
+      "conceptId": "funeral-procession",
+      "digest": "c1e595820f0a790257b2425b427cb5c32de6f15040a3ffa341a8b3fe6a24546e"
+    },
+    {
+      "id": "funeral-procession-2",
+      "conceptId": "funeral-procession",
+      "digest": "9c78ff2599c0c82b6bf32815d27d97163e56fd906e6c7d80fb078a1631940734"
+    },
+    {
+      "id": "uturn-green-arrows-1",
+      "conceptId": "uturn-green-arrows",
+      "digest": "a47e0a373acdb13906c26fddb670bcbbbf6b092395ad7f2c7715d162f7855a81"
+    },
+    {
+      "id": "uturn-green-arrows-2",
+      "conceptId": "uturn-green-arrows",
+      "digest": "83669bb4906e51bde05bfd99a2f4e5611436e7357731eb537100da2ce88c3933"
+    },
+    {
+      "id": "roundabout-entry-1",
+      "conceptId": "roundabout-entry",
+      "digest": "f8b0e9910119951925f82648202b4c3266e5c6b465ba7c89561d01557f6ca157"
+    },
+    {
+      "id": "roundabout-entry-2",
+      "conceptId": "roundabout-entry",
+      "digest": "702529ff6aa185e3d6f434f6e68090d1b923dd4d9a3b047265ee4d2559bc4006"
+    },
+    {
+      "id": "roundabout-exit-pedestrian-1",
+      "conceptId": "roundabout-exit-pedestrian",
+      "digest": "3d9c336732fbbd4f29a88d76ff3fdc3030c0ec42f1665270f07db40775f1d521"
+    },
+    {
+      "id": "roundabout-exit-pedestrian-2",
+      "conceptId": "roundabout-exit-pedestrian",
+      "digest": "b45b80c704cebb7d735f3eb10365af239839128839cb123d0b6135b1265e5e05"
+    },
+    {
+      "id": "interstate-right-1",
+      "conceptId": "interstate-right",
+      "digest": "d9c3f42baf00f3773d33476f39256fb75e9d13f01128b363cfe31b048082d7d2"
+    },
+    {
+      "id": "interstate-right-2",
+      "conceptId": "interstate-right",
+      "digest": "44efe5f691f2ad9c3e8faa58fbbd5ab0506107c17f89ad1b5c7468fea8d6d020"
+    },
+    {
+      "id": "intersection-lane-change-1",
+      "conceptId": "intersection-lane-change",
+      "digest": "fa24bc4e44ca8101bca758f17b3f04480f67f97452c3c164ef65ddebe387c68d"
+    },
+    {
+      "id": "intersection-lane-change-2",
+      "conceptId": "intersection-lane-change",
+      "digest": "f906eaab6150af3c1254fd382c2e168664f55843d396c0020f7157a092d70411"
+    },
+    {
+      "id": "lane-beyond-1",
+      "conceptId": "lane-beyond",
+      "digest": "f2ec57b02026f203aa9459e37339b8a6bd72441d4bdf0488e02618a2c8c854cd"
+    },
+    {
+      "id": "lane-beyond-2",
+      "conceptId": "lane-beyond",
+      "digest": "f3dda491714dafd81fdac9f1669a36bd1fec30759eb85fa7df03fd9b02814b52"
+    },
+    {
+      "id": "one-way-through-1",
+      "conceptId": "one-way-through",
+      "digest": "c2441c450d67ead7b8a42251558d43b7032a0bde8758c29b1be3b94dd5d33973"
+    },
+    {
+      "id": "one-way-through-2",
+      "conceptId": "one-way-through",
+      "digest": "26f752bc7f0757d18150a25996e5c264e12276c911b5d4e501dba51fad8d5480"
+    },
+    {
+      "id": "missed-turn-lane-1",
+      "conceptId": "missed-turn-lane",
+      "digest": "433413399319c6eb1176c496428e5dc4a690bb78ad6f012540d741709ab2244f"
+    },
+    {
+      "id": "missed-turn-lane-2",
+      "conceptId": "missed-turn-lane",
+      "digest": "ca6a94cde0c411366f5bb721776a9c6130e513a29a90f97c30790a209165dc90"
+    },
+    {
+      "id": "center-turn-lane-1",
+      "conceptId": "center-turn-lane",
+      "digest": "428d1673f122cb5dfabbff1a0d26d6fa28bf8f780aa840b2573d66be675cdbce"
+    },
+    {
+      "id": "center-turn-lane-2",
+      "conceptId": "center-turn-lane",
+      "digest": "9f188120376777774c44855bb80e8c3d7d0d1d3b35fa08b472498c1efb5876a2"
+    },
+    {
+      "id": "three-lane-passing-1",
+      "conceptId": "three-lane-passing",
+      "digest": "e4852f3a5aaaa03b59509bd34a180092bb27d1043225905667ede163b455a211"
+    },
+    {
+      "id": "three-lane-passing-2",
+      "conceptId": "three-lane-passing",
+      "digest": "cc991525300fe3932cd68ed0cf63db76785e515eae27a07a2afdb7f5faf64e4c"
+    },
+    {
+      "id": "yellow-white-direction-1",
+      "conceptId": "yellow-white-direction",
+      "digest": "1d9ddcb68930501569e76f6e18d886e9a3116885a2f0b6e901a8ef4484b922c9"
+    },
+    {
+      "id": "yellow-white-direction-2",
+      "conceptId": "yellow-white-direction",
+      "digest": "de108fb636d2352ae89b6e529ac74de92766a8ea197f04349e8503c621525778"
+    },
+    {
+      "id": "broken-yellow-1",
+      "conceptId": "broken-yellow",
+      "digest": "72480a4aae0ee5a82475870a1ff153e3f39c149d4986072edcb0e548d6974700"
+    },
+    {
+      "id": "broken-yellow-2",
+      "conceptId": "broken-yellow",
+      "digest": "0e61096d5cae97b25c7d4a8f65cee09423edb76baf43f6ab3e9f1d71e99647f7"
+    },
+    {
+      "id": "solid-side-1",
+      "conceptId": "solid-side",
+      "digest": "77d1826b8decd341ed5bcde2f3714f6986b7c0f38afb609929c49f545d3472a4"
+    },
+    {
+      "id": "solid-side-2",
+      "conceptId": "solid-side",
+      "digest": "47b2c003a25f8236c66543b65eaf597b75c93574a82575dd5ad9b4d936d302d5"
+    },
+    {
+      "id": "crosswalk-no-pass-1",
+      "conceptId": "crosswalk-no-pass",
+      "digest": "9eefd87774d4688cc675b5b04f7dcdf5464b95a25fcf3a2215c5d06687715f70"
+    },
+    {
+      "id": "crosswalk-no-pass-2",
+      "conceptId": "crosswalk-no-pass",
+      "digest": "c718389aef054660d8a1d6d134e8726d0263b63eeaea4e26d8c036c48fd142e6"
+    },
+    {
+      "id": "passing-return-1",
+      "conceptId": "passing-return",
+      "digest": "d6c78e28c6971009054e80469fceac97ce8f23393821162af54bacee97d9bd3b"
+    },
+    {
+      "id": "passing-return-2",
+      "conceptId": "passing-return",
+      "digest": "0a9a8eae54261358bc086724fa77109b585e91d3ab7c1a261131648fc895568f"
+    },
+    {
+      "id": "being-passed-1",
+      "conceptId": "being-passed",
+      "digest": "887010edd9d1b0af3796d5c5cc91d63a606a49f0ac6e56c14092fb78c941fe1a"
+    },
+    {
+      "id": "being-passed-2",
+      "conceptId": "being-passed",
+      "digest": "329c6aa95ef71405aff2c1449e6291f64a10a6dc9658f08e24b07a8b5038ec0e"
+    },
+    {
+      "id": "right-pass-one-way-1",
+      "conceptId": "right-pass-one-way",
+      "digest": "c95008d6aafdd95c11fac1c48a670582f2228389f3e28cf971461b9f38d70f36"
+    },
+    {
+      "id": "right-pass-one-way-2",
+      "conceptId": "right-pass-one-way",
+      "digest": "e59907728f2efb832ac7f367ea41739726a959901e71bd935c6b45b4982e79b8"
+    },
+    {
+      "id": "right-pass-turning-1",
+      "conceptId": "right-pass-turning",
+      "digest": "abcac6d2a6ed7211d026471ea6b862485e830dfb50af5be862dc57db2fc26cae"
+    },
+    {
+      "id": "right-pass-turning-2",
+      "conceptId": "right-pass-turning",
+      "digest": "8cd5a7933ef49130fb412fd288aa8e18d67da3dd38a2b389ef8e14e635baf4a6"
+    },
+    {
+      "id": "right-pass-multilane-1",
+      "conceptId": "right-pass-multilane",
+      "digest": "bbbe8c6874bbe72f95aedcfc1ee43a42850c6600432b040f0954c5ad21111d47"
+    },
+    {
+      "id": "right-pass-multilane-2",
+      "conceptId": "right-pass-multilane",
+      "digest": "5fad75b1192b8b050611c064818bf61fe87aef93179fc57c0b776c6745a52ddb"
+    },
+    {
+      "id": "turn-signal-distance-1",
+      "conceptId": "turn-signal-distance",
+      "digest": "fd10c42190b1d0123364b481a55e0253860e62ee74e590a31fc74852f0c95b1e"
+    },
+    {
+      "id": "turn-signal-distance-2",
+      "conceptId": "turn-signal-distance",
+      "digest": "258b7fe65a6b7ce4d4e65e3c93d79d409c03b1595cda3ef9c0efdd05058c0cc9"
+    },
+    {
+      "id": "acceleration-lane-1",
+      "conceptId": "acceleration-lane",
+      "digest": "b9af1fc1d972691f89fd57df53279b086b812130e90da20d3e047861925127fc"
+    },
+    {
+      "id": "acceleration-lane-2",
+      "conceptId": "acceleration-lane",
+      "digest": "108997a851f00617449b3986af48d941b470f288cba7237366058a328c371a39"
+    },
+    {
+      "id": "deceleration-lane-1",
+      "conceptId": "deceleration-lane",
+      "digest": "b6785f5789cfafb4b58ceefa03025245034c57b66c0b0f2cc6fcb4dbfa44ba44"
+    },
+    {
+      "id": "deceleration-lane-2",
+      "conceptId": "deceleration-lane",
+      "digest": "0ab75ce1ad10d5e00032ff0eb64fa9456977acf6dd292bdf0df6c23baf87ce98"
+    },
+    {
+      "id": "missed-exit-1",
+      "conceptId": "missed-exit",
+      "digest": "af39868bf64221dc15ab22277720cc303dca7f8a014c8c0b8f8816a523f46b1a"
+    },
+    {
+      "id": "missed-exit-2",
+      "conceptId": "missed-exit",
+      "digest": "3c9f8492b557014215f1580f539cb680efdbfcbd494558fbd4f78b8fae68d44a"
+    },
+    {
+      "id": "moving-emergency-1",
+      "conceptId": "moving-emergency",
+      "digest": "d05b75b85d87ba069e03e9afca923bd5a58a6bdb066a3e0beb0a0150e5415f39"
+    },
+    {
+      "id": "moving-emergency-2",
+      "conceptId": "moving-emergency",
+      "digest": "f22311ab702291805d59ae3c31066a32127e0b00de379137f8ab4e67386e0b49"
+    },
+    {
+      "id": "emergency-divided-exception-1",
+      "conceptId": "emergency-divided-exception",
+      "digest": "9b23b303e10ab4741b4c5b950d47026d50f33b18e805c06a1448dc55b8241996"
+    },
+    {
+      "id": "emergency-divided-exception-2",
+      "conceptId": "emergency-divided-exception",
+      "digest": "49e7f5d455b3ecb131faa2b86b904afb4fc661a90af704ea1b5cc1172fb43e4a"
+    },
+    {
+      "id": "move-over-multilane-1",
+      "conceptId": "move-over-multilane",
+      "digest": "fedc8661f5278beede81fa571a2c9f2b9ebc699930ab41f6eb753d632abcc677"
+    },
+    {
+      "id": "move-over-multilane-2",
+      "conceptId": "move-over-multilane",
+      "digest": "0947b1deb1b776196747cab84b4b402341b915421c93c8f89728b5aefa5877fd"
+    },
+    {
+      "id": "move-over-single-1",
+      "conceptId": "move-over-single",
+      "digest": "e38dfbd15e1918ed55f98a76952440635531368897978940e5d6df23d5e42ee0"
+    },
+    {
+      "id": "move-over-single-2",
+      "conceptId": "move-over-single",
+      "digest": "4748c2ddac928590558120f853a365b10a86888a7244c0956874d209e5d876c7"
+    },
+    {
+      "id": "roundabout-emergency-1",
+      "conceptId": "roundabout-emergency",
+      "digest": "7c6f3e827b0fc433d20ba881a6cd3d2768035d7dee61ba1f7b9e8e9011461311"
+    },
+    {
+      "id": "roundabout-emergency-2",
+      "conceptId": "roundabout-emergency",
+      "digest": "5c90afed65f07b3ac06d5f78395a337eb4d242b1ed011b69c20ab6ed8ab1a91f"
+    },
+    {
+      "id": "fire-hose-1",
+      "conceptId": "fire-hose",
+      "digest": "b132d0d491288bff13f47e0268b748c92dda2739cbd665bc7d25a14e6892a3e8"
+    },
+    {
+      "id": "fire-hose-2",
+      "conceptId": "fire-hose",
+      "digest": "d90eb559d3ebfede573e33b41485a9b7751606fa319b719478429653899ae7d9"
+    },
+    {
+      "id": "emergency-parking-distance-1",
+      "conceptId": "emergency-parking-distance",
+      "digest": "778d04ae0d11fcd2393c5d928059236b831864e1c24321d7d6598ba0c865edcf"
+    },
+    {
+      "id": "emergency-parking-distance-2",
+      "conceptId": "emergency-parking-distance",
+      "digest": "6824151df41453f72cd1b9cd3c96da3d2d4cb8094f9d41a0a386782c30621165"
+    },
+    {
+      "id": "fire-truck-distance-1",
+      "conceptId": "fire-truck-distance",
+      "digest": "26467abac544db948363aa060068aa1c6069987f9e7978fee163077ea4834525"
+    },
+    {
+      "id": "fire-truck-distance-2",
+      "conceptId": "fire-truck-distance",
+      "digest": "4f8c2db6e1d7693bb8a323d6832c4874ed36f14c23101df0913ca3700002760d"
+    },
+    {
+      "id": "tire-blowout-1",
+      "conceptId": "tire-blowout",
+      "digest": "df006a0209a45285acf5618c925b503e3322a53fd020ae26b09b48b685e1c4e7"
+    },
+    {
+      "id": "tire-blowout-2",
+      "conceptId": "tire-blowout",
+      "digest": "5bf63c36fee23c3094db99ffaeb19ece64fd98f987e0c76793e6facc79b1d441"
+    },
+    {
+      "id": "run-off-pavement-1",
+      "conceptId": "run-off-pavement",
+      "digest": "60bdae2dd5422f5b2e48b22e52068125eb9bc83f9a79de27af3e45f5d6f8a3be"
+    },
+    {
+      "id": "run-off-pavement-2",
+      "conceptId": "run-off-pavement",
+      "digest": "955b5086571003192c61b73bcedf100f9fe0ba640cecc40d06093eb104ebf380"
+    },
+    {
+      "id": "stuck-accelerator-1",
+      "conceptId": "stuck-accelerator",
+      "digest": "fbca7314fa2ea223ff2221f2ad78c58f6fa612cc589d60324f97e232e69b089f"
+    },
+    {
+      "id": "stuck-accelerator-2",
+      "conceptId": "stuck-accelerator",
+      "digest": "fad671996234ee166490337ea828d279a9b11e3bb364b510d0b1c9f58fdd7926"
+    },
+    {
+      "id": "automatic-brake-failure-1",
+      "conceptId": "automatic-brake-failure",
+      "digest": "bd2ca8a3049cda37ed6fe1b4a97eac83837baf918dc5dc25b06a9ccd1250a85f"
+    },
+    {
+      "id": "automatic-brake-failure-2",
+      "conceptId": "automatic-brake-failure",
+      "digest": "9e3d0557fb4408d98b991a6ad921ad1cefd19c7a63ce7362ed94183151bd78fb"
+    },
+    {
+      "id": "manual-brake-failure-1",
+      "conceptId": "manual-brake-failure",
+      "digest": "95ad6da60f88a8bca915c7a852a4da7db0eb023be7063c05377da102e54efc9e"
+    },
+    {
+      "id": "manual-brake-failure-2",
+      "conceptId": "manual-brake-failure",
+      "digest": "8f5a9ba873d4b8dd5d2f878ea23701443f929edfb6ebceae51ce84368a2c7be3"
+    },
+    {
+      "id": "abs-stop-1",
+      "conceptId": "abs-stop",
+      "digest": "e6be254782867b1a4ae66e3c07a3fcf38b99a723f0231dadb50f9d15a24ca05c"
+    },
+    {
+      "id": "abs-stop-2",
+      "conceptId": "abs-stop",
+      "digest": "36a1ff7aef9b33c048f8087b4370b1800c08b6b2bca168a0e6cb168d47042c95"
+    },
+    {
+      "id": "non-abs-slippery-1",
+      "conceptId": "non-abs-slippery",
+      "digest": "639150b49c02ea3dc711cec785b0dcd9a2a55eeed2a9d00cfb1ffd0a33dd2135"
+    },
+    {
+      "id": "non-abs-slippery-2",
+      "conceptId": "non-abs-slippery",
+      "digest": "3802583686092fc4c966b24388b543cd66d5d4dff6331a374edeba2007ac60e2"
+    },
+    {
+      "id": "oncoming-in-lane-1",
+      "conceptId": "oncoming-in-lane",
+      "digest": "e82660aecb4640fbbf3b8b8eccffb7b7186d7ae6084c3afd1b7110259fa3403e"
+    },
+    {
+      "id": "oncoming-in-lane-2",
+      "conceptId": "oncoming-in-lane",
+      "digest": "c4b3c4e870025ddedb7fb9c8cbe4bbfd8982212caed725969ad9f09fda757969"
+    },
+    {
+      "id": "police-safe-stop-1",
+      "conceptId": "police-safe-stop",
+      "digest": "94cc087ede880ad3b11ff689eb066033f5d266e4102a2fdf101cce0a0e450e9a"
+    },
+    {
+      "id": "police-safe-stop-2",
+      "conceptId": "police-safe-stop",
+      "digest": "e36af2e1d8f6d071fde627f61f05ff0d67ff80fd6592b1cd9fb63f6239307fec"
+    },
+    {
+      "id": "railroad-evacuate-1",
+      "conceptId": "railroad-evacuate",
+      "digest": "e6ed30ebea1d554fdd8ea4c150a4b8385eac090538862ac706e675eaffeaa80a"
+    },
+    {
+      "id": "railroad-evacuate-2",
+      "conceptId": "railroad-evacuate",
+      "digest": "1662c94b1a3b4470c2ce4e16d0dbbfa53ca3efbccbaff57eea65aa1a5fd5dc2f"
+    },
+    {
+      "id": "railroad-ens-1",
+      "conceptId": "railroad-ens",
+      "digest": "be58931149fc183187e6d311859febd221d2700f2d403a4f60d8d10b081f449a"
+    },
+    {
+      "id": "railroad-ens-2",
+      "conceptId": "railroad-ens",
+      "digest": "24fc9f081c6c8bc25713f9dcebb64f194719dfa673e923878919a687f4a44334"
+    },
+    {
+      "id": "train-priority-1",
+      "conceptId": "train-priority",
+      "digest": "4fa29e02b38dd20ef62ef17e83824e9e86e736119f9c33d33de6d6a4391cb30e"
+    },
+    {
+      "id": "train-priority-2",
+      "conceptId": "train-priority",
+      "digest": "47e13ae65f81951c31b40f2fe8493b2fb85b8a11c35b301dda1e841e7680eafc"
+    },
+    {
+      "id": "tire-change-passengers-1",
+      "conceptId": "tire-change-passengers",
+      "digest": "9d94665fb3bc072b1ea736fcb5c9bbe0d686f8baad71ca97f420e64fb1b87193"
+    },
+    {
+      "id": "tire-change-passengers-2",
+      "conceptId": "tire-change-passengers",
+      "digest": "17e47728fb950425f3d0f009a0ff0bfe905f65052fb64ff39fdbf6693e8fe626"
+    },
+    {
+      "id": "rain-headlights-1",
+      "conceptId": "rain-headlights",
+      "digest": "bcb625847a12a0d6e8ef9c36a39a60732e9451d97387687500bb6dfb1693f5dd"
+    },
+    {
+      "id": "rain-headlights-2",
+      "conceptId": "rain-headlights",
+      "digest": "4c086fce0c5bb8d3e232b73adec46303f43a5bd3d4de0da684f77fb8e1d244fa"
+    },
+    {
+      "id": "first-rain-1",
+      "conceptId": "first-rain",
+      "digest": "2ddba56cbf1b48ed4be851998936091ce3249d515fc416be014693c9d9dcc835"
+    },
+    {
+      "id": "first-rain-2",
+      "conceptId": "first-rain",
+      "digest": "2c382f61f9b98ca5370f0e187b72444754424c4134b5275fe4efb0a6c39c7b48"
+    },
+    {
+      "id": "hydroplaning-1",
+      "conceptId": "hydroplaning",
+      "digest": "bfe11e2a07fd5e8342acdd9ccff653858dcfe0400bf060140ff55d0c421b87f7"
+    },
+    {
+      "id": "hydroplaning-2",
+      "conceptId": "hydroplaning",
+      "digest": "e17b333f15f73d821180a76edf694e010cc145adca6051afaf126b7129662ea8"
+    },
+    {
+      "id": "wet-brakes-1",
+      "conceptId": "wet-brakes",
+      "digest": "2508435ace2e4ed14cf828c1186cab44c3597da208359c530987473a4a358c49"
+    },
+    {
+      "id": "wet-brakes-2",
+      "conceptId": "wet-brakes",
+      "digest": "43a91941302592312f28a347cb86cb2c920f241015d4bbaa0ab3a7ce7d2c981b"
+    },
+    {
+      "id": "rear-skid-1",
+      "conceptId": "rear-skid",
+      "digest": "30bf3d5e83a931202ee88aa560b5fcdcb355e19ed0e76e1efe8116f46fe124ac"
+    },
+    {
+      "id": "rear-skid-2",
+      "conceptId": "rear-skid",
+      "digest": "7757f2423e564e343faefeff7e5c34e330d1aad7b7c13160c6509c33d145bdea"
+    },
+    {
+      "id": "follow-two-seconds-1",
+      "conceptId": "follow-two-seconds",
+      "digest": "ef6e9a4e1bd64ec11bbe232d7fec9e7b9e6b742a7d1fb49ae4d41e5cfc35d4ae"
+    },
+    {
+      "id": "follow-two-seconds-2",
+      "conceptId": "follow-two-seconds",
+      "digest": "d4e5e8114745e3349f1c08f0b7767e307a65a28fa4ba2a759f87d92f8ec288c4"
+    },
+    {
+      "id": "wet-following-1",
+      "conceptId": "wet-following",
+      "digest": "69751db6160ebbcfe0a8d2216bbd6cbc85ec45f62abe6c1245c9d5fb012e7a39"
+    },
+    {
+      "id": "wet-following-2",
+      "conceptId": "wet-following",
+      "digest": "35987f494ac5f826c1a1a28047a603f7c38949ab2b160ca705837b4620f428e2"
+    },
+    {
+      "id": "city-speed-1",
+      "conceptId": "city-speed",
+      "digest": "b518545c83a762f5ef38859bc44310e69f15c0b396661c0a13165ad2d64cf19b"
+    },
+    {
+      "id": "city-speed-2",
+      "conceptId": "city-speed",
+      "digest": "f20a822a4a89b9d48f9c559bf27477227400fe22be113ceaa215959f771890cb"
+    },
+    {
+      "id": "stopping-distance-55-1",
+      "conceptId": "stopping-distance-55",
+      "digest": "8b5a069518c2bfc308be4cfeaa4590286315551ef4751a2c31ba8f46afd0543f"
+    },
+    {
+      "id": "stopping-distance-55-2",
+      "conceptId": "stopping-distance-55",
+      "digest": "910afd80faab4438ac40fbe22b575fb06fb7d26dba1cc9c625f1d57d2adb41d1"
+    },
+    {
+      "id": "motorcycle-pass-1",
+      "conceptId": "motorcycle-pass",
+      "digest": "8e700b6f95959bd19376a437e44126053556330f9f6f0821dfd6b7cb44401044"
+    },
+    {
+      "id": "motorcycle-pass-2",
+      "conceptId": "motorcycle-pass",
+      "digest": "8fe6fc93bceb1a80b0d5aa3ab9c6794f8be35ccdc40fcb9e1cf49176d953d070"
+    },
+    {
+      "id": "bicycle-pass-1",
+      "conceptId": "bicycle-pass",
+      "digest": "b3ac1a27a12b33f3d01463a729735620341863f7ca2525fcbd3e3047b9c9ad91"
+    },
+    {
+      "id": "bicycle-pass-2",
+      "conceptId": "bicycle-pass",
+      "digest": "ccfe6a757d4a0fb4a173c1b6e533ecc8f2b509bec40f2636264433b677113306"
+    },
+    {
+      "id": "wrong-way-edge-lines-1",
+      "conceptId": "wrong-way-edge-lines",
+      "digest": "8ab44d4225ada26e9a62b21afc861e04d1e52e2ff6aee07dadb1b7a50a63e06b"
+    },
+    {
+      "id": "wrong-way-edge-lines-2",
+      "conceptId": "wrong-way-edge-lines",
+      "digest": "3a87b7bbdfc43f84541979353c2d933ae42dc06b23acdd300380c2b10875b285"
+    },
+    {
+      "id": "red-reflectors-1",
+      "conceptId": "red-reflectors",
+      "digest": "0f77962419b92cbc4433e44d7ca0c5c9ae1862375dca24ed98df1ea4d99c6fbf"
+    },
+    {
+      "id": "red-reflectors-2",
+      "conceptId": "red-reflectors",
+      "digest": "a863e76211e5ca4993a103555336bef8fc6daecc9e9c40367d81f630a3895979"
+    },
+    {
+      "id": "sign-stop-1",
+      "conceptId": "sign-stop",
+      "digest": "a6f40c02f4d88d1c92f9dd74e4c176bd23ab7002ca584a919071f435576ed16a"
+    },
+    {
+      "id": "sign-stop-2",
+      "conceptId": "sign-stop",
+      "digest": "312e19120d505287b392feab7cfb32da74fe75605657e7e8ceea5ea76ca1ab73"
+    },
+    {
+      "id": "sign-yield-1",
+      "conceptId": "sign-yield",
+      "digest": "80039a9a87bd589af37c0f47532b177891d1749280d7b034ab40ec3c1048ebce"
+    },
+    {
+      "id": "sign-yield-2",
+      "conceptId": "sign-yield",
+      "digest": "488856c0f7a6d3aba205385a1735aecd306741e1a4285df8efa1ee13d3604bc1"
+    },
+    {
+      "id": "sign-do-not-enter-1",
+      "conceptId": "sign-do-not-enter",
+      "digest": "ed3cf101b93589e1bfbac14ac823ee2e24237d5ca8201a7990b0df7f9c00d651"
+    },
+    {
+      "id": "sign-do-not-enter-2",
+      "conceptId": "sign-do-not-enter",
+      "digest": "6202ddb48e1c84e29e0d3964cfc31ab5fc6f28776d30eef00d9b7430fb487182"
+    },
+    {
+      "id": "sign-no-left-1",
+      "conceptId": "sign-no-left",
+      "digest": "355dbc8fb6bf24f918b537136f6688cd6e855c0bc0476942f53a0535e4e60360"
+    },
+    {
+      "id": "sign-no-left-2",
+      "conceptId": "sign-no-left",
+      "digest": "995738b2e23d560d50ffbe6a4ee4494cd9f142f899c774a2522473c7da785f13"
+    },
+    {
+      "id": "sign-no-uturn-1",
+      "conceptId": "sign-no-uturn",
+      "digest": "20dae05fd761393b08ce5ba13de9620303c3e0be9c2b85521dca8e38e0667adb"
+    },
+    {
+      "id": "sign-no-uturn-2",
+      "conceptId": "sign-no-uturn",
+      "digest": "73f4800df7a5670b638e800315b0410345ada0a7bb4108641b1a2fa385a76d2b"
+    },
+    {
+      "id": "sign-left-only-1",
+      "conceptId": "sign-left-only",
+      "digest": "5be26e9196a33fd25cf6cd79c75be4f6c50825c1430b0de9cd711bda3ef339ad"
+    },
+    {
+      "id": "sign-left-only-2",
+      "conceptId": "sign-left-only",
+      "digest": "d845fe47951fb112c7a2488fcf5ecad809cae8805490146374c72071785698ba"
+    },
+    {
+      "id": "sign-straight-left-1",
+      "conceptId": "sign-straight-left",
+      "digest": "94c9ae257c183c39da5d7a962bb3dc735e8198a613c0719a283f8fa9fbf33808"
+    },
+    {
+      "id": "sign-straight-left-2",
+      "conceptId": "sign-straight-left",
+      "digest": "f2ca97e454fe19b0d5a474ad4c77a18864b82d6b84aa350f26a0631fc045c2ae"
+    },
+    {
+      "id": "sign-keep-right-1",
+      "conceptId": "sign-keep-right",
+      "digest": "b5e722c8a0fa7abfc6614ff44e43a87bda2986aade9555e8f90c4aed225f2ac1"
+    },
+    {
+      "id": "sign-keep-right-2",
+      "conceptId": "sign-keep-right",
+      "digest": "20e0ec2880c954abae9765f548af50930da7ef8b6fcbe625ff39bc39019ba49c"
+    },
+    {
+      "id": "sign-one-way-1",
+      "conceptId": "sign-one-way",
+      "digest": "2d596c252604d815f2e7972120f3e569da084e1f19c7f4f4e10ac8cfb09232e4"
+    },
+    {
+      "id": "sign-one-way-2",
+      "conceptId": "sign-one-way",
+      "digest": "72c86fb00d6edadcaa96e50a3d38f84e24c1aa0ceac5ba61105d61b4c210c095"
+    },
+    {
+      "id": "sign-no-pass-1",
+      "conceptId": "sign-no-pass",
+      "digest": "de9f7d295c4c8c14ad586f88973ba3c6c5eb309604590805c3aa68f62e42680c"
+    },
+    {
+      "id": "sign-no-pass-2",
+      "conceptId": "sign-no-pass",
+      "digest": "f60139b3f880051ac80a5786a03f5837304a90e554c9b12748a0663dc07446d1"
+    },
+    {
+      "id": "sign-keep-off-median-1",
+      "conceptId": "sign-keep-off-median",
+      "digest": "cb08c217d0e5f3a379c2e89433537cce645d2da6da73b918198d4685f427c5ac"
+    },
+    {
+      "id": "sign-keep-off-median-2",
+      "conceptId": "sign-keep-off-median",
+      "digest": "14c4f59f0d493eaf5d9716dd18f61aae00bf343c5b4b7f0494651aa2dee38430"
+    },
+    {
+      "id": "sign-no-stop-tracks-1",
+      "conceptId": "sign-no-stop-tracks",
+      "digest": "0482cd501bdadbac6ca8577c29ecba5538ce9b2ceb389b31fdbd1de91a14695c"
+    },
+    {
+      "id": "sign-no-stop-tracks-2",
+      "conceptId": "sign-no-stop-tracks",
+      "digest": "a19ae4dff98b5839dfe20279990abfc4777af615d56ba0b97d338ca7ca1d6b61"
+    },
+    {
+      "id": "sign-rr-ahead-1",
+      "conceptId": "sign-rr-ahead",
+      "digest": "5feec6eeff6f92fbd061063eea638515acf692d586e52906ae3160f946b871f2"
+    },
+    {
+      "id": "sign-rr-ahead-2",
+      "conceptId": "sign-rr-ahead",
+      "digest": "79aac11c476b452cdc7eabba380f4e7514375e8de33b44f6d09f6347041c051e"
+    },
+    {
+      "id": "sign-no-passing-zone-1",
+      "conceptId": "sign-no-passing-zone",
+      "digest": "320b13bc65623dbc5f2cfaf3ec7f163ac65d63537f89c7c7f3b91c5a36b8341b"
+    },
+    {
+      "id": "sign-no-passing-zone-2",
+      "conceptId": "sign-no-passing-zone",
+      "digest": "cd536f53f4c4e77d3c8e70fc24cb68291a0cff812506d71edf88febc4f14c57a"
+    },
+    {
+      "id": "sign-stop-ahead-1",
+      "conceptId": "sign-stop-ahead",
+      "digest": "76f4f926c31e59393cd8010d0e776ccb47122fa4a7b5af9595393878f3bc5de6"
+    },
+    {
+      "id": "sign-stop-ahead-2",
+      "conceptId": "sign-stop-ahead",
+      "digest": "52f20b8aa8d8643dc3b5ce348216513960ecd6d00dd76267af17de1236d674b7"
+    },
+    {
+      "id": "sign-signal-ahead-1",
+      "conceptId": "sign-signal-ahead",
+      "digest": "c3db20ae52de52ff7d8142b37860997338358266d4cf7775e4e224c100bb21fe"
+    },
+    {
+      "id": "sign-signal-ahead-2",
+      "conceptId": "sign-signal-ahead",
+      "digest": "78412303658be6c6d7d02b657eed7844478485b64481805ebe288d3b765d88dd"
+    },
+    {
+      "id": "sign-merge-1",
+      "conceptId": "sign-merge",
+      "digest": "8976de8a8fad832d63736202b8f25b4d728d34af9537dec6451af0ff0ed06a3b"
+    },
+    {
+      "id": "sign-merge-2",
+      "conceptId": "sign-merge",
+      "digest": "a821743256619ec066a885ea5a04fe421a9437a0be596618e24bb4356870c4df"
+    },
+    {
+      "id": "sign-lane-drop-1",
+      "conceptId": "sign-lane-drop",
+      "digest": "75c577fe0333aa6928a983457612c3913357bd42134ff7245ba1f9ac8ead803b"
+    },
+    {
+      "id": "sign-lane-drop-2",
+      "conceptId": "sign-lane-drop",
+      "digest": "5ced8643e107dc775fdddabed9621584986a6ee0a9631114b7b6c9aefe0818da"
+    },
+    {
+      "id": "sign-two-way-1",
+      "conceptId": "sign-two-way",
+      "digest": "37288a3c02921949b4555578a86ab795f3dd712723e47a8907324201c7c97087"
+    },
+    {
+      "id": "sign-two-way-2",
+      "conceptId": "sign-two-way",
+      "digest": "411ceeda9a03c3f5823cd652e6a8246538a9c39f2ed03d64607ae17c534bf596"
+    },
+    {
+      "id": "sign-soft-shoulder-1",
+      "conceptId": "sign-soft-shoulder",
+      "digest": "9927ff8df3a25326fb6adc218cd1f300658f38a2619ba8ce79c3bda980f5b8bb"
+    },
+    {
+      "id": "sign-soft-shoulder-2",
+      "conceptId": "sign-soft-shoulder",
+      "digest": "9396154d935a57bb8b856c0bb26fbcd7f9263117a856bab1fc4ba253c556d400"
+    },
+    {
+      "id": "sign-low-clearance-1",
+      "conceptId": "sign-low-clearance",
+      "digest": "9495b102ae44db724a614d56790d01f38500c61177f21eefcc37c388ab4c5390"
+    },
+    {
+      "id": "sign-low-clearance-2",
+      "conceptId": "sign-low-clearance",
+      "digest": "101e5f994bab2fd56030f343901b34297281acd3dce7b057d539118e894c242a"
+    },
+    {
+      "id": "sign-crossroad-1",
+      "conceptId": "sign-crossroad",
+      "digest": "6b352844a3463085353fa6dda8e523b6cb76b06c9ae05b36bc7b90bf88d5feb6"
+    },
+    {
+      "id": "sign-crossroad-2",
+      "conceptId": "sign-crossroad",
+      "digest": "c04e1749e38946623edc85753a86cf2447c69c71dfcfe78c762a8053b5e857ab"
+    }
+  ]
+}

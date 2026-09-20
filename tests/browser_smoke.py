@@ -61,6 +61,7 @@ with tempfile.TemporaryDirectory(prefix='road-ready-browser-') as td:
         page=fresh()
         assert page.locator('#stat-answered').inner_text()=='0'
         assert '226' in page.locator('#bank-count').inner_text()
+        assert '226 of 226 questions are source checked' in page.locator('#source-notice-copy').inner_text()
         if args.screenshots:
             page.screenshot(path=str(ROOT/'docs/preview.png'),full_page=True)
         done('fresh launch and inventory; no previous chat scores')
@@ -73,6 +74,8 @@ with tempfile.TemporaryDirectory(prefix='road-ready-browser-') as td:
             answer(page, correct=i!=0)
             assert page.locator('.choice-feedback').count()==4
             assert page.locator('#source-line a').get_attribute('href').startswith('https://www.ncdot.gov/')
+            assert '#page=' in page.locator('#source-line a').get_attribute('href')
+            assert page.locator('#source-line .badge').inner_text() == 'SOURCE CHECKED'
             if i==0:
                 assert page.locator('.choice.incorrect').evaluate('(e)=>getComputedStyle(e).backgroundColor') != page.locator('.choice.correct').evaluate('(e)=>getComputedStyle(e).backgroundColor')
             if i==0 and args.screenshots:
@@ -141,6 +144,8 @@ with tempfile.TemporaryDirectory(prefix='road-ready-browser-') as td:
         assert page4.locator('#import-pack').is_disabled()
         page4.locator('#pack-ack').check();page4.locator('#import-pack').click()
         assert '227' in page4.locator('#bank-count').inner_text()
+        assert '226 of 227 questions are source checked' in page4.locator('#source-notice-copy').inner_text()
+        assert '1 question still needs source review' in page4.locator('#source-notice-copy').inner_text()
         page4.locator('#validate-pack').click()
         assert 'Duplicate question id' in page4.locator('#pack-preview').inner_text()
         done('validated session pack import, acknowledgment gate, duplicate rejection')
@@ -159,6 +164,7 @@ with tempfile.TemporaryDirectory(prefix='road-ready-browser-') as td:
         page4.once('dialog',lambda d:d.accept())
         page4.locator('#reset-session').click()
         assert '226' in page4.locator('#bank-count').inner_text()
+        assert '226 of 226 questions are source checked' in page4.locator('#source-notice-copy').inner_text()
         assert page4.locator('#stat-answered').inner_text()=='0'
         assert page4.locator('#welcome-card').is_visible()
         done('full reset removes imported packs and history')

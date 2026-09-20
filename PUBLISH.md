@@ -1,6 +1,6 @@
 # Publish Road Ready in the-projects-i-tried
 
-The bundle is an ordinary repository directory, not an already-pushed repository. It contains no credentials or `.git` folder. You may unpack it directly into your preferred projects directory; it does not need to live in Downloads.
+This repository is published at [the-projects-i-tried/nc-road-ready](https://github.com/the-projects-i-tried/nc-road-ready), with [GitHub Pages](https://the-projects-i-tried.github.io/nc-road-ready/) deploying from `main`. For an existing clone, validate changes, commit, and push to its configured remote. The initial-setup instructions below apply only to a new unversioned copy; do not recreate the repository or reinitialize an existing clone.
 
 ## 1. Verify locally
 
@@ -10,7 +10,7 @@ npm run check
 npm start
 ```
 
-Open `http://127.0.0.1:8080`, then stop the server with Control-C. Review the prominent content-status notice before describing the site publicly. The full-handbook source-review queue remains open.
+Open `http://127.0.0.1:8080`, then stop the server with Control-C. Review the content-status notice and [source records](docs/SOURCES.md) before describing the site publicly. Newly added material still requires its own source review.
 
 ## 2. Create and push an empty repository
 

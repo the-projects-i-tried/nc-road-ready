@@ -41,6 +41,10 @@ test('adding a pack permanently validates, demotes review status, compiles, and 
   const context={window:{}};vm.runInNewContext(fs.readFileSync(path.join(tmp,'site/js/bank.js'),'utf8'),context);
   assert.equal(context.window.ROAD_READY_BANK.questions.length,227);
   assert.throws(()=>execFileSync(process.execPath,[script,sample],{stdio:'pipe'}));
+  // Directly editing a committed pack must not bypass the importer demotion.
+  pack.questions[0].reviewStatus='source-checked';
+  fs.writeFileSync(path.join(tmp,'content/packs/example-bus-pack.json'),JSON.stringify(pack));
+  assert.throws(()=>execFileSync(process.execPath,[path.join(tmp,'scripts/build.cjs')],{stdio:'pipe'}),/lacks editorial review evidence/);
  }finally{fs.rmSync(tmp,{recursive:true,force:true});}
 });
 test('development server serves static files, returns MIME types, and prevents encoded traversal',async()=>{

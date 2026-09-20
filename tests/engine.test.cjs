@@ -12,10 +12,10 @@ function finishRound(s,choose=q=>q.correctId){let v;while((v=s.next()))s.submit(
 function record(s,c,id,correct=true,hintUsed=false){s.record({questionId:id,concept:c,topic:s.concepts.get(c).topic,choiceId:'a',correct,hintUsed,mode:'learn',repeat:false});}
 function extra(){const q=clone(bank.questions[0]);q.id='test-added-variant';q.stem='Test fixture only: '+q.stem;q.reviewStatus='source-checked';return {schemaVersion:1,packId:'test-extra',title:'Test fixture',sources:{},concepts:[],questions:[q]};}
 
-test('core bank has 226 unique authored variants, 113 rule families, and 44 source-checked sign questions',()=>{
+test('core bank has 226 unique source-checked variants across 113 rule families',()=>{
  assert.deepEqual(RR.validatePack(bank),[]);assert.equal(bank.questions.length,226);assert.equal(bank.concepts.length,113);
  assert.equal(new Set(bank.questions.map(RR.fingerprint)).size,226);
- const s=fresh();assert.equal(bank.questions.filter(q=>s.info(q).reviewStatus==='source-checked').length,44);
+ const s=fresh();assert.equal(bank.questions.filter(q=>s.info(q).reviewStatus==='source-checked').length,226);
  for(const q of bank.questions){assert.equal(q.choices.length,4);assert.ok(q.choices.every(c=>c.feedback.length>15));if(q.asset)assert.ok(fs.existsSync(path.join(__dirname,'../site',q.asset)));}
 });
 test('source URLs accept only official handbook/sign-sheet PDFs',()=>{

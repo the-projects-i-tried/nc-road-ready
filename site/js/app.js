@@ -150,7 +150,10 @@
   }
   function renderAbout(){
     const checked=session.bank.questions.filter(q=>session.info(q).reviewStatus==='source-checked').length;
-    $('review-status-copy').textContent=`This bank contains ${session.bank.questions.length} authored question variants grouped into ${session.bank.concepts.length} rule families. ${checked} questions were checked against the official sign excerpts; ${session.bank.questions.length-checked} questions remain marked “Source review pending.” Build date: September 19, 2026.`;
+    const pending=session.bank.questions.length-checked;
+    $('source-notice-copy').textContent=`${checked} of ${session.bank.questions.length} questions are source checked. ${pending?`${pending} ${pending===1?'question still needs':'questions still need'} source review.`:'The built-in bank includes handbook page references and reviewed sign illustrations.'}`;
+    $('source-notice-badge').className='badge'+(pending?' amber':'');
+    $('review-status-copy').textContent=`This bank contains ${session.bank.questions.length} authored question variants grouped into ${session.bank.concepts.length} rule families. ${checked} questions were checked against official NCDOT sources; ${pending} questions remain marked “Source review pending.” Built-in handbook review: ${base.sources.handbook.checkedOn}.`;
     $('finite-copy').textContent=`There are ${session.bank.questions.length} question formulations, not an infinite set of distinct facts. Several questions apply the same rule in different scenarios. New question packs can extend the collection indefinitely, but their content must be reviewed.`;
   }
   function renderLibrary(){
@@ -186,7 +189,7 @@
     if(!confirm('Clear this session’s answers, exposure history, and imported packs? Nothing has been saved automatically.'))return;
     session=new RR.Session(base);lastConfig=null;pendingPack=null;
     $('welcome-card').hidden=false;$('question-card').hidden=true;$('round-summary').hidden=true;$('request-status').hidden=true;$('pack-preview').hidden=true;$('import-controls').hidden=true;$('issue-panel').hidden=true;
-    renderStats();showPane('practice');toast('Fresh session. No past answers are assumed.');
+    renderStats();renderAbout();showPane('practice');toast('Fresh session. No past answers are assumed.');
   });
   $('copy-prompt').addEventListener('click',()=>copy(session.generationPrompt($('lab-request').value.trim()||'Add 20 genuinely new Class C practice scenarios.'),'road-ready-authoring-prompt.md'));
   $('download-prompt').addEventListener('click',()=>{download('road-ready-authoring-prompt.md',session.generationPrompt($('lab-request').value.trim()||'Add 20 genuinely new Class C practice scenarios.'),'text/markdown');toast('Prompt downloaded. It includes this session’s answers only.');});

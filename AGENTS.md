@@ -2,7 +2,7 @@
 
 This is a dependency-free static learning app for a public organization. Preserve session-only state, all-per-choice feedback, source provenance, relative asset URLs, and deterministic-testable pure engine logic.
 
-Read README.md and docs/SOURCES.md before changing content. The initial full-handbook items are pending verification; never relabel them based on a previous assistant statement. Obtain the actual current official document, inspect relevant figures, and document editorial review. Never invent an edition or page number. Do not report a user's prior chat score as observed browser performance.
+Read README.md and docs/SOURCES.md before changing content. Source-checked items must retain the documented evidence in docs/CONTENT_AUDIT.json; never relabel them based on a previous assistant statement or refresh review digests merely to pass checks. Obtain the actual current official document, inspect relevant figures, and document editorial review. Never invent an edition or page number. Do not report a user's prior chat score as observed browser performance.
 
 Change content/core.json or content/packs/*.json, not generated site/js/bank.js. Run npm run build and npm run check, then commit source, generated output, and review notes together. Imported content must remain unverified until genuinely reviewed. Preserve numerical qualifiers, exceptions, and the distinction between law and advice. All questions need one defensible correct answer and specific feedback for all four choices.
 
