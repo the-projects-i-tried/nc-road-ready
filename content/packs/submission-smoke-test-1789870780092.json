@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "packId": "submission-smoke-test-1789870780092",
+  "title": "AUTOMATION TEST ONLY — close without merging",
+  "sources": {},
+  "concepts": [],
+  "questions": [
+    {
+      "id": "submission-smoke-test-1789870780092-question",
+      "concept": "bus-three-lane",
+      "difficulty": 3,
+      "stem": "Automation test fixture (do not publish): An oncoming school bus is loading children on a road with one travel lane each way and a shared center left-turn lane. Which action should you take?",
+      "hint": "Identify the condition that changes the rule, then rule out the alternatives.",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Stop; traffic in both directions must stop.",
+          "feedback": "One travel lane in each direction plus a center turn lane is the handbook’s two-lane-with-center-turn-lane configuration. Both directions must stop."
+        },
+        {
+          "id": "b",
+          "text": "Proceed because any center turn lane creates an exception.",
+          "feedback": "The center-turn-lane exception for opposing traffic requires four or more ordinary travel lanes."
+        },
+        {
+          "id": "c",
+          "text": "Stop only if the bus is in the center lane.",
+          "feedback": "The bus’s exact lane is not the deciding factor; this road configuration requires both directions to stop."
+        },
+        {
+          "id": "d",
+          "text": "Proceed slowly after sounding the horn.",
+          "feedback": "Sounding the horn is not a substitute for stopping for this school bus."
+        }
+      ],
+      "correctId": "a",
+      "reviewStatus": "needs-source-review"
+    }
+  ]
+}
