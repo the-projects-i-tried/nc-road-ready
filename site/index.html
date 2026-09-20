@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A private, session-only North Carolina driving knowledge practice game. Pick a topic, learn from every answer, and add your own question packs.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Road Ready — North Carolina practice</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="js/engine.js"></script>
+  <script defer src="js/bank.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to practice</a>
+<header class="site-header">
+  <a class="brand" href="./" aria-label="Road Ready home"><img src="assets/favicon.svg" alt="" width="38" height="38"><span>road ready<span class="brand-sub">NORTH CAROLINA</span></span></a>
+  <nav aria-label="Main navigation">
+    <button class="nav-button active" data-pane="practice" aria-current="page">Practice</button>
+    <button class="nav-button" data-pane="session">Your session</button>
+    <button class="nav-button" data-pane="lab">Question lab</button>
+    <button class="nav-button" data-pane="about">About</button>
+  </nav>
+  <span class="privacy-pill"><span class="privacy-dot"></span> Session only</span>
+</header>
+<main id="main" tabindex="-1">
+  <noscript><div class="notice">This game needs JavaScript. It runs locally in your browser and does not need an account.</div></noscript>
+  <div id="fatal" class="notice" hidden></div>
+  <aside class="source-notice" aria-label="Content review status"><span class="badge amber">CONTENT NOTE</span><span>Draft bank: the full handbook could not be re-fetched for this build. Sign excerpts were checked; other rules still need a current-source review.</span><button class="text-button" data-pane="about">Details ↗</button></aside>
+
+  <section id="pane-practice" class="pane" aria-label="Practice">
+    <div class="hero">
+      <div><p class="eyebrow">SMALL ROUNDS. BETTER UNDERSTANDING.</p><h1>Learn the rule.<br><span>Not just the answer.</span></h1><p class="hero-copy">Five questions at a time. Useful explanations for every choice.<br class="desktop-break"> More practice where you need it, all in this session.</p></div>
+      <div class="hero-note"><div class="route-mark">NC</div><div><strong id="bank-count">A growing practice bank</strong><p>No account. No cookies.<br>No AI making up rules on the fly.</p></div></div>
+    </div>
+    <div class="practice-layout">
+      <div class="practice-main">
+        <section class="panel request-panel" aria-labelledby="request-heading">
+          <div class="panel-heading"><h2 id="request-heading">Where shall we go next?</h2><span class="badge">YOUR CHOICE</span></div>
+          <form id="request-form">
+            <label class="sr-only" for="request-input">Request topics, round length, or difficulty</label>
+            <div class="request-row"><input id="request-input" type="text" maxlength="350" autocomplete="off" placeholder="5 harder questions on school buses and right of way"><button class="button dark" type="submit">Build my round <span aria-hidden="true">↗</span></button></div>
+          </form>
+          <p class="micro">Local topic matching, not a live chatbot. Try a request or choose topics below.</p>
+          <div class="prompt-examples" aria-label="Example requests"><button data-prompt="5 questions on my weak spots">My weak spots</button><button data-prompt="5 questions on ABS">ABS braking</button><button data-prompt="5 harder questions on school buses">Trickier bus rules</button><button data-prompt="10 mixed questions, no signs">Mix it up</button></div>
+          <div id="request-status" class="inline-status" role="status" hidden></div>
+          <details id="customize"><summary>Choose topics and round settings</summary>
+            <div class="topic-chips" id="topic-chips" aria-label="Topics; select any combination"></div>
+            <form id="settings-form" class="settings-row">
+              <label>Round length<select id="round-length"><option value="5">5 questions</option><option value="10">10 questions</option><option value="25">25 questions</option><option value="50">50 questions</option></select></label>
+              <label>Difficulty<select id="difficulty"><option value="adaptive">Adaptive</option><option value="any">Any level</option><option value="1">Basics</option><option value="2">Standard</option><option value="3">Applied scenarios</option></select></label>
+              <label class="checkbox"><input type="checkbox" id="allow-review"> Allow seen questions</label>
+              <button class="button dark" type="submit">Start round</button>
+            </form>
+            <p class="micro">No topics selected means a broad mix. With fresh-only practice, exact questions are not reused. A new scenario can still test a rule you have seen.</p>
+          </details>
+        </section>
+
+        <section id="welcome-card" class="panel welcome-card" aria-labelledby="welcome-title">
+          <span class="eyebrow">ONE QUESTION. ONE CLEAR DECISION.</span><h2 id="welcome-title">A small start goes a long way.</h2>
+          <p>Pick your answer, check the reasoning, and try the next scenario. The next selection responds to what you actually answered—not a guessed profile.</p>
+          <div class="welcome-actions"><button id="quick-start" class="button dark large">Start with five <span aria-hidden="true">→</span></button><button id="mock-start" class="button outline">25-question check</button></div>
+          <p class="micro">The check withholds feedback until the end. It is our practice format, not an official DMV test or a pass guarantee.</p>
+        </section>
+
+        <section id="question-card" class="panel question-card" aria-labelledby="question-stem" hidden>
+          <div class="question-top"><span id="round-label" class="eyebrow"></span><span id="question-topic" class="badge"></span></div>
+          <progress id="round-progress" value="0" max="5" aria-label="Round progress"></progress>
+          <div class="question-meta"><span id="question-level"></span><span id="selection-note"></span></div>
+          <h2 id="question-stem" tabindex="-1"></h2>
+          <figure id="question-figure" hidden><img id="question-image" width="148" height="148" alt=""><figcaption>Original teaching illustration · not official artwork</figcaption></figure>
+          <form id="answer-form"><fieldset><legend class="sr-only">Choose one answer</legend><div id="choices"></div></fieldset>
+            <div class="answer-actions"><button id="hint-button" class="text-button" type="button">A small hint</button><span class="micro keyboard-tip">1–4 to choose · Enter to check</span><button id="check-button" class="button dark" disabled type="submit">Check answer</button></div>
+          </form>
+          <p id="hint-text" class="hint" hidden></p>
+          <div id="answer-result" class="answer-result" role="status" hidden></div>
+          <div id="source-line" class="source-line" hidden></div>
+          <div id="after-answer" class="after-answer" hidden><button id="report-question" class="text-button">Flag this question</button><button id="next-button" class="button dark">Next question →</button></div>
+        </section>
+
+        <section id="round-summary" class="panel round-summary" aria-labelledby="round-summary-title" hidden>
+          <p class="eyebrow">ROUND COMPLETE</p><h2 id="round-summary-title" tabindex="-1"></h2><p id="round-summary-copy"></p>
+          <div class="welcome-actions"><button id="another-round" class="button dark">Five more, adapted to me →</button><button id="weak-round" class="button outline">Work on mistakes</button></div>
+          <div id="batch-review" class="batch-review"></div>
+        </section>
+      </div>
+      <aside class="session-aside" aria-label="Current session overview">
+        <section class="panel score-panel"><div class="panel-heading"><h2>Your session</h2><span class="live-label"><span class="privacy-dot"></span> IN MEMORY</span></div>
+          <div class="score-grid"><div><strong id="stat-accuracy">—</strong><span>accuracy</span></div><div><strong id="stat-answered">0</strong><span>answered</span></div><div><strong id="stat-practiced">0</strong><span>rules practiced</span></div><div><strong id="stat-fresh">226</strong><span>fresh variants</span></div></div>
+          <div class="soft-divider"></div><h3>What needs another look?</h3><div id="weak-list"><p class="muted">Your first round will give us something to work with.</p></div>
+          <button class="text-button" data-pane="session">See your session →</button>
+        </section>
+        <section class="aside-note"><span class="eyebrow">HOW THIS ADAPTS</span><p>Missed rules get more weight. New scenarios come before repeats. Stronger results shift the mix toward applied questions.</p><p class="micro">“Practiced” needs multiple unassisted, spaced successes—not one lucky answer. It is not a readiness certification.</p></section>
+        <section class="aside-note privacy-note"><strong>Nothing follows you home.</strong><p>Answers stay in this page’s memory. Refreshing starts over. Save a report only when you choose.</p></section>
+      </aside>
+    </div>
+  </section>
+
+  <section id="pane-session" class="pane narrow-pane" aria-labelledby="session-title" hidden>
+    <p class="eyebrow">JUST THIS VISIT</p><h1 id="session-title">Your learning trail.</h1><p class="page-intro">Actual answers, actual progress. Nothing from earlier chats is assumed or imported.</p>
+    <div class="utility-row"><button id="download-report" class="button dark">Download session report</button><button id="reset-session" class="button outline">Start a fresh session</button><label class="checkbox"><input id="only-missed" type="checkbox"> Show mistakes only</label></div>
+    <div id="session-topics" class="topic-report"></div><div id="session-history" class="history"></div>
+  </section>
+
+  <section id="pane-lab" class="pane" aria-labelledby="lab-title" hidden>
+    <p class="eyebrow">ROOM TO GROW</p><h1 id="lab-title">The question lab.</h1><p class="page-intro">The built-in bank is finite. You can keep extending it with source-grounded question packs—without rebuilding the game or putting an API key in a public site.</p>
+    <div class="lab-grid">
+      <section class="panel"><h2>1. Ask for genuinely new material</h2><p>Describe a direction. Export a prompt that includes the pack format, existing questions to avoid, and this session’s real answer history.</p><label for="lab-request">What would you like to add?</label><textarea id="lab-request" rows="3" maxlength="1500" placeholder="20 new questions contrasting school-bus road layouts, with plausible distractors"></textarea><div class="utility-row"><button id="copy-prompt" class="button dark">Copy authoring prompt</button><button id="download-prompt" class="button outline">Download prompt</button></div><p class="micro">Paste the prompt into your preferred assistant with the current handbook available. Nothing is sent from this app. Generated questions still require a source review.</p></section>
+      <section class="panel"><h2>2. Bring a question pack back</h2><p>Upload or paste the returned JSON. The app checks structure, citations, duplicate IDs, duplicate stems, and answer consistency. Those checks do not establish factual accuracy.</p>
+        <label class="file-label" for="pack-file">Choose a JSON pack <input id="pack-file" type="file" accept=".json,application/json"></label><label for="pack-json">Or paste pack JSON</label><textarea id="pack-json" rows="4" spellcheck="false" placeholder='{"schemaVersion":1,"packId":"my-pack", ...}'></textarea><button id="validate-pack" class="button outline">Validate & preview</button>
+        <div id="pack-preview" class="pack-preview" role="status" hidden></div><div id="import-controls" hidden><label class="checkbox"><input id="pack-ack" type="checkbox"> I understand that format validation is not a factual review.</label><button id="import-pack" class="button dark" disabled>Add to this session</button></div>
+      </section>
+    </div>
+    <section id="issue-panel" class="panel" hidden><h2>Question report</h2><p>This report is local. Copy it into a repository issue or share it with the maintainer; the app does not submit anything automatically.</p><label class="sr-only" for="issue-text">Question report text</label><textarea id="issue-text" rows="8" readonly></textarea><button id="copy-issue" class="button dark">Copy report</button></section>
+    <section class="panel library-panel"><div class="panel-heading"><h2>Browse the rule library</h2><span id="library-total" class="badge"></span></div><label class="sr-only" for="library-search">Search rules</label><input id="library-search" type="search" placeholder="Find a rule: school bus, ABS, yellow arrow…"><div id="rule-library"></div></section>
+  </section>
+
+  <section id="pane-about" class="pane narrow-pane" aria-labelledby="about-title" hidden>
+    <p class="eyebrow">THE FINE PRINT, IN PLAIN ENGLISH</p><h1 id="about-title">Practice you can inspect.</h1>
+    <section class="panel prose"><h2>What this is</h2><p>An independent North Carolina driving-knowledge practice game, not an NCDOT or NCDMV product. Questions are original practice material, not an official exam question bank. Signs and road-rule questions are mixed for learning; real sign recognition is a separate testing component.</p>
+      <h2>Content status: please read</h2><p id="review-status-copy"></p><p>The full handbook URL repeatedly timed out during this build. Its entries were adapted from the preceding handbook-based quiz conversation, not independently rechecked against the current PDF. No edition, page numbers, or “verified today” label has been invented. Source sections are navigation aids until checked.</p><p>The separate official regulatory- and warning-sign sheets were accessible and inspected. Those questions are distinguished as “Source checked.” All imported packs start unverified. The source badges are not a substitute for reading the current handbook or following current law, road signs, and officers’ instructions.</p>
+      <p><a href="https://www.ncdot.gov/dmv/license-id/driver-licenses/new-drivers/Documents/nc-driver-handbook.pdf" target="_blank" rel="noopener noreferrer">Open the official NCDOT handbook ↗</a> · <a href="https://www.ncdot.gov/dmv/license-id/driver-licenses/new-drivers/Pages/handbooks.aspx" target="_blank" rel="noopener noreferrer">Official handbooks page ↗</a> · <a href="https://www.ncdot.gov/dmv/license-id/driver-licenses/new-drivers/Pages/driver-license-tests.aspx" target="_blank" rel="noopener noreferrer">Official testing information ↗</a></p>
+      <h2>What “adaptive” means here</h2><p>The next question is selected using this page’s answers: mistakes increase a rule’s selection weight, recent rules get a cooldown, and new variants are preferred. Adaptive difficulty responds to recent results. “Practiced” requires two unassisted successes on different variants separated by other questions. No score is a calibrated prediction of passing a driving exam.</p>
+      <h2>Not infinite—and no made-up numbers</h2><p id="finite-copy"></p><p>Reordering choices does not count as a new question. Asking for a narrow topic can exhaust its variants. The app says so and offers another topic, an imported pack, or explicitly allowed review. It never silently manufactures a new legal rule.</p>
+      <h2>Privacy</h2><p>No cookies, localStorage, sessionStorage, analytics, account, service worker, advertising, or API calls. Answer history exists only in JavaScript memory. A refresh or new page resets it. Downloads and copied prompts happen only after your action. The site’s host may still keep ordinary web access logs; links to NCDOT or GitHub take you to their sites.</p>
+      <h2>Help make the bank stronger</h2><p>Use “Flag this question” to prepare a local issue report. Repository contributors should check the source-review queue, read the authoring instructions, preserve exceptions, and validate the bank before publishing. Routine structural tests do not certify road-law or emergency advice.</p>
+      <p><a href="https://github.com/the-projects-i-tried/nc-road-ready" target="_blank" rel="noopener noreferrer">Project repository (after publication) ↗</a> · <a href="https://the-projects-i-tried.github.io/" target="_blank" rel="noopener noreferrer">A front page for some projects ↗</a></p>
+    </section>
+  </section>
+</main>
+<footer class="site-footer"><span>ROAD READY · NORTH CAROLINA</span><span>Learn carefully. Drive thoughtfully.</span><button class="text-button" data-pane="about">Sources & privacy</button></footer>
+<div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "packId": "example-bus-pack",
+  "title": "Format example: school-bus roadway comparison (unverified)",
+  "sources": {},
+  "concepts": [],
+  "questions": [
+    {
+      "id": "example-bus-crossing-variant",
+      "concept": "bus-three-lane",
+      "difficulty": 3,
+      "stem": "An oncoming school bus is loading children on a road with one travel lane each way and a shared center left-turn lane. Which action should you take?",
+      "choices": [
+        {
+          "id": "a",
+          "text": "Stop; traffic in both directions must stop.",
+          "feedback": "One travel lane in each direction plus a center turn lane is the handbook\u2019s two-lane-with-center-turn-lane configuration. Both directions must stop."
+        },
+        {
+          "id": "b",
+          "text": "Proceed because any center turn lane creates an exception.",
+          "feedback": "The center-turn-lane exception for opposing traffic requires four or more ordinary travel lanes."
+        },
+        {
+          "id": "c",
+          "text": "Stop only if the bus is in the center lane.",
+          "feedback": "The bus\u2019s exact lane is not the deciding factor; this road configuration requires both directions to stop."
+        },
+        {
+          "id": "d",
+          "text": "Proceed slowly after sounding the horn.",
+          "feedback": "Sounding the horn is not a substitute for stopping for this school bus."
+        }
+      ],
+      "correctId": "a",
+      "hint": "Identify the condition that changes the rule, then rule out the alternatives.",
+      "reviewStatus": "needs-source-review"
+    }
+  ]
+}

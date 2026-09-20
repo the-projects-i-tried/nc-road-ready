@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Road Ready question pack, schema version 1",
+  "description": "Shape only. engine.js additionally validates sources, cross-references, duplicates, and bounds; neither establishes factual correctness.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "packId",
+    "title",
+    "sources",
+    "concepts",
+    "questions"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "packId": {
+      "$ref": "#/$defs/id"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "concepts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/concept"
+      }
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5000,
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{0,95}$"
+    },
+    "review": {
+      "enum": [
+        "needs-source-review",
+        "source-checked"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "title",
+        "url"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://(www\\.)?ncdot\\.gov/dmv/license-id/driver-licenses/new-drivers/Documents/(nc-driver-handbook|driver-handbook|regulatory-signs|warning-signs)\\.pdf([?#].*)?$"
+        }
+      }
+    },
+    "concept": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "topic",
+        "tags",
+        "summary",
+        "sourceId",
+        "section",
+        "reviewStatus"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "topic": {
+          "enum": [
+            "signs",
+            "signals",
+            "school-buses",
+            "right-of-way",
+            "lane-use",
+            "passing",
+            "emergencies",
+            "weather",
+            "sharing",
+            "speed-distance"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceId": {
+          "$ref": "#/$defs/id"
+        },
+        "section": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pdfPage": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "reviewStatus": {
+          "$ref": "#/$defs/review"
+        },
+        "priority": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 5
+        }
+      }
+    },
+    "choice": {
+      "type": "object",
+      "required": [
+        "id",
+        "text",
+        "feedback"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "feedback": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "required": [
+        "id",
+        "concept",
+        "difficulty",
+        "stem",
+        "hint",
+        "choices",
+        "correctId"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "concept": {
+          "$ref": "#/$defs/id"
+        },
+        "difficulty": {
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "stem": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hint": {
+          "type": "string",
+          "minLength": 1
+        },
+        "choices": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/choice"
+          }
+        },
+        "correctId": {
+          "$ref": "#/$defs/id"
+        },
+        "asset": {
+          "type": "string",
+          "pattern": "^assets/sign-[a-z0-9-]+\\.svg$"
+        },
+        "assetDescription": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewStatus": {
+          "$ref": "#/$defs/review"
+        }
+      }
+    }
+  }
+}

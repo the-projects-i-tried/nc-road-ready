@@ -1,0 +1,29 @@
+name: Question correction
+description: Report an inaccurate, ambiguous, or poorly explained practice question.
+title: '[Question] '
+body:
+  - type: input
+    id: question
+    attributes:
+      label: Question id
+      description: Shown in review details or the app's local question report.
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is wrong or unclear?
+      description: Explain the issue without sharing personal information.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Official handbook evidence
+      description: Include source URL, page or section, and the relevant rule. Say when unavailable.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested correction

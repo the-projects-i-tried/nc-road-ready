@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+coverage/
+test-results/
+playwright-report/
+*.tar.gz
+*.zip
+road-ready.html

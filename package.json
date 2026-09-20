@@ -1,0 +1,19 @@
+{
+  "name": "nc-road-ready",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A session-only, extensible North Carolina driving-knowledge practice game.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "check": "node scripts/build.cjs --check && node --test tests/*.test.cjs",
+    "start": "node scripts/serve.cjs",
+    "validate": "node scripts/validate.cjs",
+    "add-pack": "node scripts/add-pack.cjs",
+    "preview": "node scripts/preview.cjs"
+  }
+}
