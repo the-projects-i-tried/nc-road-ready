@@ -3,9 +3,10 @@
   'use strict';
   const $=id=>document.getElementById(id);
   const node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
-  let session,selectedTopics=new Set(),pendingPack=null,toastTimer,lastConfig=null;
-  const RR=window.RoadReady,base=window.ROAD_READY_BANK;
-  if(!RR||!base){$('fatal').hidden=false;$('fatal').textContent='The local question bank could not load. Keep the site/ folder together and run npm run build from the repository if it has been edited.';return;}
+  let session,selectedTopics=new Set(),pendingPack=null,pendingSubmissionJSON=null,toastTimer,lastConfig=null;
+  const RR=window.RoadReady,base=window.ROAD_READY_BANK,Submission=window.RoadReadySubmission;
+  const SUBMISSION_ISSUE_URL='https://github.com/the-projects-i-tried/nc-road-ready/issues/new?template=question-pack.yml';
+  if(!RR||!base||!Submission){$('fatal').hidden=false;$('fatal').textContent='The local question bank could not load. Keep the site/ folder together and run npm run build from the repository if it has been edited.';return;}
   try{session=new RR.Session(base);}catch(e){$('fatal').hidden=false;$('fatal').textContent='Question bank validation failed: '+e.message;return;}
   if(new URLSearchParams(location.search).get('embed')==='1')document.body.classList.add('embed');
   function toast(text){clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,5500);}
@@ -22,12 +23,24 @@
     const url=URL.createObjectURL(new Blob([text],{type})),a=node('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
   async function copy(text,fallbackName){
-    try{await navigator.clipboard.writeText(text);toast('Copied. Nothing was sent anywhere.');}
+    try{await navigator.clipboard.writeText(text);toast('Copied. Nothing was sent anywhere.');return 'copied';}
     catch{
       const t=node('textarea');t.value=text;t.className='sr-only';document.body.append(t);t.select();
       let ok=false;try{ok=document.execCommand('copy');}catch{}t.remove();
-      if(ok)toast('Copied. Nothing was sent anywhere.');else{download(fallbackName,text,'text/plain');toast('Clipboard unavailable here. Downloaded a text file instead.');}
+      if(ok){toast('Copied. Nothing was sent anywhere.');return 'copied';}
+      download(fallbackName,text,'text/plain');toast('Clipboard unavailable here. Downloaded a text file instead.');return 'downloaded';
     }
+  }
+  function submissionStatus(text,error=false){
+    $('submission-status').className='pack-preview'+(error?' error':'');
+    $('submission-status').textContent=text;
+    $('submission-status').hidden=false;
+  }
+  function invalidateSubmission(message='Pack JSON changed. Prepare and copy the submission again before opening the GitHub form.'){
+    pendingSubmissionJSON=null;
+    const link=$('open-submission-form');
+    link.setAttribute('aria-disabled','true');
+    if(message)submissionStatus(message,true);
   }
   function sourceLine(q){
     const {concept:c,source:s,reviewStatus}=session.info(q),box=node('div',undefined,'source-line');
@@ -188,7 +201,8 @@
   $('reset-session').addEventListener('click',()=>{
     if(!confirm('Clear this session’s answers, exposure history, and imported packs? Nothing has been saved automatically.'))return;
     session=new RR.Session(base);lastConfig=null;pendingPack=null;
-    $('welcome-card').hidden=false;$('question-card').hidden=true;$('round-summary').hidden=true;$('request-status').hidden=true;$('pack-preview').hidden=true;$('import-controls').hidden=true;$('issue-panel').hidden=true;
+    $('welcome-card').hidden=false;$('question-card').hidden=true;$('round-summary').hidden=true;$('request-status').hidden=true;$('pack-preview').hidden=true;$('import-controls').hidden=true;$('issue-panel').hidden=true;invalidateSubmission('');
+    $('submission-status').hidden=true;
     renderStats();renderAbout();showPane('practice');toast('Fresh session. No past answers are assumed.');
   });
   $('copy-prompt').addEventListener('click',()=>copy(session.generationPrompt($('lab-request').value.trim()||'Add 20 genuinely new Class C practice scenarios.'),'road-ready-authoring-prompt.md'));
@@ -207,17 +221,43 @@
   }
   $('validate-pack').addEventListener('click',previewPack);
   $('pack-file').addEventListener('change',async()=>{
+    invalidateSubmission('Selected file changed. Prepare and copy the submission again after reviewing the JSON.');
     const f=$('pack-file').files[0];if(!f)return;
     if(f.size>RR.MAX_PACK_BYTES){$('pack-preview').className='pack-preview error';$('pack-preview').textContent='This pack exceeds the 5 MB limit.';$('pack-preview').hidden=false;return;}
     try{$('pack-json').value=await f.text();previewPack();}catch(e){toast('Could not read the file: '+e.message);}
   });
-  $('pack-json').addEventListener('input',()=>{pendingPack=null;$('import-controls').hidden=true;});
+  $('pack-json').addEventListener('input',()=>{pendingPack=null;$('import-controls').hidden=true;invalidateSubmission();});
   $('pack-ack').addEventListener('change',()=>$('import-pack').disabled=!$('pack-ack').checked);
   $('import-pack').addEventListener('click',()=>{
     if(!pendingPack||!$('pack-ack').checked)return;
     try{const n=session.addPack(pendingPack);pendingPack=null;$('import-controls').hidden=true;$('pack-preview').textContent=`Added ${n} unverified questions to this session. A refresh removes this imported pack; adding it to the repository makes it permanent for future visits.`;renderStats();renderLibrary();renderAbout();toast(n+' questions added to this session.');}catch(e){toast(e.message);}
   });
   $('library-search').addEventListener('input',renderLibrary);
+  $('prepare-submission').addEventListener('click',async()=>{
+    pendingSubmissionJSON=null;
+    $('open-submission-form').setAttribute('aria-disabled','true');
+    try{
+      const submission=Submission.parseSubmissionJSON($('pack-json').value,base);
+      const json=Submission.formatSubmissionJSON(submission);
+      pendingSubmissionJSON=json;
+      $('open-submission-form').href=SUBMISSION_ISSUE_URL;
+      $('open-submission-form').removeAttribute('aria-disabled');
+      const copyResult=await copy(json,'road-ready-question-pack-submission.json');
+      if(pendingSubmissionJSON!==json)return;
+      if(copyResult==='copied')submissionStatus(`Submission JSON copied: ${submission.title}\n${submission.questions.length} question ${submission.questions.length===1?'variant':'variants'}; ${submission.concepts.length} new rule ${submission.concepts.length===1?'family':'families'}.\n\nNext: open the GitHub form, sign in if needed, paste the copied JSON, and submit the issue. The JSON will become public on GitHub. Submitting does not complete source review; @volfovsky must approve it before anything is merged.`);
+      else submissionStatus(`Submission JSON downloaded as road-ready-question-pack-submission.json: ${submission.title}\n${submission.questions.length} question ${submission.questions.length===1?'variant':'variants'}; ${submission.concepts.length} new rule ${submission.concepts.length===1?'family':'families'}.\n\nNext: open the downloaded file, copy its full contents, then open the GitHub form and paste the JSON. The JSON will become public on GitHub. Submitting does not complete source review; @volfovsky must approve it before anything is merged.`);
+    }catch(e){
+      pendingSubmissionJSON=null;
+      $('open-submission-form').setAttribute('aria-disabled','true');
+      submissionStatus(e.message,true);
+    }
+  });
+  $('open-submission-form').addEventListener('click',e=>{
+    if(!pendingSubmissionJSON){
+      e.preventDefault();
+      submissionStatus('Prepare and copy valid submission JSON before opening the GitHub form.',true);
+    }
+  });
   $('report-question').addEventListener('click',()=>{
     const q=session.batch?.current?.question;if(!q)return;const {concept:c,source:s}=session.info(q);
     $('issue-text').value=`Question report\n\nQuestion id: ${q.id}\nRule: ${q.concept}\nPrompt: ${q.stem}\n\nChoices:\n${q.choices.map(ch=>'- '+ch.text+(ch.id===q.correctId?' [keyed correct]':'')+'\n  '+ch.feedback).join('\n')}\n\nCited source: ${s.url}\nSection: ${c.section}\nReview status: ${session.info(q).reviewStatus}\n\nWhat appears wrong or ambiguous:\n[Add your explanation and the relevant handbook page.]\n`;

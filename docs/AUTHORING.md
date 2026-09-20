@@ -4,7 +4,9 @@
 
 **Temporary:** use Question lab to export a prompt, obtain JSON, then validate, preview, acknowledge the review limitation, and import. Questions are available until page refresh or session reset.
 
-**Permanent:** save the pack outside this repository, run `npm run add-pack -- /path/to/pack.json`, inspect the new file under `content/packs/`, review its claims against the official handbook, run `npm run build` and `npm run check`, and commit the source and generated bank together. The add-pack script validates against all currently committed packs and rolls back its new file if the build fails.
+**Permanent public submission:** when the submission route is enabled, use Question lab to prepare the strict submission JSON, then paste it into the GitHub issue form. A GitHub account is required, and the issue body is public. When repository and organization workflow permissions allow Actions-created pull requests, the trusted issue workflow validates the issue-created snapshot and opens a bot pull request. The owner reviews and approves before merge; Pages deploys from `main` after merge. See [Permanent Question Submissions](SUBMISSIONS.md).
+
+**Maintainer repository work:** save the pack outside this repository, create a feature branch, run `npm run add-pack -- /path/to/pack.json`, inspect the new file under `content/packs/`, review its claims against the official handbook, run `npm run build` and `npm run check`, and open a pull request with the source and generated bank together. The add-pack script validates against all currently committed packs and rolls back its new file if the build fails. The owner cannot approve their own pull request, so externally submitted packs should use the bot path when owner approval is required.
 
 `npm run validate -- file.json --against-core` is useful for a preliminary check against core data. For packs that reuse concepts from other add-on packs, use the in-app validator or `add-pack`, which validates against the complete bank.
 
@@ -33,7 +35,7 @@ Top level:
 }
 ```
 
-`questions` must contain 1–5000 entries. Browser uploads have a 5 MB limit. IDs use lowercase letters, digits, hyphens, and underscores, starting with a letter or digit, up to 96 characters. Reuse an existing concept id for a new variant of the same rule **without redefining that concept**. Existing source ids may be referenced without including them in `sources`.
+`questions` must contain 1–5000 entries. Browser uploads have a 5 MB limit for temporary imports. Permanent submission JSON is stricter: it must fit within 50,000 UTF-8 bytes, use only known fields, use allowed official NCDOT source URLs, and reference only bundled assets already present in the current bank. IDs use lowercase letters, digits, hyphens, and underscores, starting with a letter or digit, up to 96 characters. Reuse an existing concept id for a new variant of the same rule **without redefining that concept**. Existing source ids may be referenced without including them in `sources`.
 
 A new concept needs:
 
@@ -64,7 +66,7 @@ Give every alternative specific feedback. Explain the boundary separating the ri
 
 ## Review status changes
 
-All browser imports and packs added by the command line begin pending. To mark an item locally as source-checked, first perform and document the review. Update the concept status (and any explicit question override), add the verified page information, and record the reviewer/date/document version in a commit or review note. Rebuild afterward. Imported question-level `needs-source-review` overrides a source-checked concept; both must be considered.
+All browser imports, permanent submissions, bot-created packs, and packs added by the command line begin pending. Submitted `source-checked` claims are forced back to `needs-source-review`. To mark an item locally as source-checked, first perform and document the review. Update the concept status (and any explicit question override), add the verified page information, and record the reviewer/date/document version in a commit or review note. Rebuild afterward. Imported question-level `needs-source-review` overrides a source-checked concept; both must be considered.
 
 The core review is recorded in [CONTENT_AUDIT.json](CONTENT_AUDIT.json) and [CONTENT_AUDIT.md](CONTENT_AUDIT.md). Every core question inherits its concept's status and has an individual evidence digest covering the stem, choices, feedback, key, hint, concept citation, and SVG bytes. `scripts/review-evidence.cjs` checks that the current content still matches that review. After an actual editorial re-review, update the affected finding, question evidence digest (using `reviewDigest`), and document metadata as needed; do not update digests just to bypass a failure. Alternatively, mark changed material pending until it can be reviewed. The built-in inventory test intentionally expects 226 reviewed questions; a deliberate demotion must also update that release expectation and its documentation.
 
@@ -74,4 +76,4 @@ The build validates review evidence after merging permanent packs, including que
 
 ## Safe maintenance
 
-Do not edit generated `site/js/bank.js` directly. Do not add secrets, tracking, user scores from a chat transcript, or a live model endpoint to a content pack. Do not treat `npm run check` as a legal-accuracy audit. Inventory tests deliberately pin the initial core count; update their expectations and documentation if deliberately changing the core rather than adding a separate pack.
+Do not edit generated `site/js/bank.js` directly. Do not add secrets, tracking, user scores from a chat transcript, or a live model endpoint to a content pack. Do not treat `npm run check`, the submission normalizer, or a bot pull request as a legal-accuracy audit. They check structure, provenance shape, duplicate risks, generated output, and repository safety boundaries; they do not prove the facts. Inventory tests deliberately pin the initial core count; update their expectations and documentation if deliberately changing the core rather than adding a separate pack.

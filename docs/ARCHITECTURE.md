@@ -2,7 +2,7 @@
 
 ## Deliberately small runtime
 
-The browser loads `engine.js`, the compiled `bank.js`, and `app.js`. They are ordinary local scripts rather than CDN modules. The site requires JavaScript but no server-side computation, API, build service, or browser persistence. Node is used only for optional development utilities. CSS and fonts are local/system resources. Sign SVGs are original schematic teaching illustrations.
+The browser loads `engine.js`, the compiled `bank.js`, `submission.js`, and `app.js`. They are ordinary local scripts rather than CDN modules. The site requires JavaScript but no server-side computation, API, build service, or browser persistence. Node is used only for optional development utilities. CSS and fonts are local/system resources. Sign SVGs are original schematic teaching illustrations.
 
 `content/core.json` is the editable source of the built-in bank. The build appends validated `content/packs/*.json` in filename order, checks asset existence, and emits `site/js/bank.js`. It escapes HTML-sensitive data so text cannot terminate a script in the standalone distribution. `build --check` fails if the committed generated bundle differs from source.
 
@@ -53,6 +53,10 @@ The 25-question check builds a topic-balanced queue, preferring different rule f
 Imported JSON receives structural validation: ids, source allowlist, four unique choices, a valid answer key, per-choice feedback, valid concept references, and duplicate stem/illustration checks. It cannot prove that a scenario is new in meaning, that a distractor is plausible, or that a legal explanation is correct.
 
 Imports cannot overwrite known source metadata or concept definitions. Browser imports may only reference existing bundled illustration paths. Imported review claims are demoted to pending. Text is rendered with `textContent` and DOM creation, never `innerHTML` or `eval`. Browser CSP disallows connections, objects, and submitted forms. The standalone file uses exact hashes for its embedded scripts/styles.
+
+Permanent submissions pass through `submission.js`, a pure browser/Node normalizer that returns canonical JSON data and does not perform storage, network calls, DOM writes, or evaluation. It rejects unknown fields, prototype-shaped keys, oversized JSON over 50,000 UTF-8 bytes, unapproved source URLs, and assets not already present in the current bank. It forces every submitted concept and question to `needs-source-review`. These checks reduce the attack surface for public issue intake, but they are not a proof that all future tools or renderers are injection-proof and they are not a factual source review.
+
+The intended GitHub intake is issue-to-bot-PR, subject to organization and repository workflow permissions. The trusted issue workflow uses the issue-created snapshot to create a pull request that may modify only `content/packs/<packId>.json`, `site/js/bank.js`, and `docs/CONTENT_REVIEW.md`. Later issue edits do not overwrite an existing pull request; submitters should open a new issue for revisions unless a maintainer edits the pull request. Standard pull-request checks are read-only, and the trusted `workflow_run` bridge does not execute pull-request code or consume pull-request artifacts. The bot cannot merge and cannot satisfy CODEOWNER approval.
 
 ## Session lifetime and extension boundary
 

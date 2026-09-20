@@ -59,9 +59,16 @@ with tempfile.TemporaryDirectory(prefix='road-ready-browser-') as td:
             page.locator('#check-button').click()
 
         page=fresh()
+        initial_counts=page.evaluate("""() => {
+            const bank=window.ROAD_READY_BANK;
+            const concepts=new Map(bank.concepts.map(c=>[c.id,c]));
+            const checked=bank.questions.filter(q=>(q.reviewStatus || concepts.get(q.concept).reviewStatus)==='source-checked').length;
+            return {questions: bank.questions.length, checked};
+        }""")
+        initial_pending=initial_counts['questions']-initial_counts['checked']
         assert page.locator('#stat-answered').inner_text()=='0'
-        assert '226' in page.locator('#bank-count').inner_text()
-        assert '226 of 226 questions are source checked' in page.locator('#source-notice-copy').inner_text()
+        assert f"{initial_counts['questions']} questions" in page.locator('#bank-count').inner_text()
+        assert f"{initial_counts['checked']} of {initial_counts['questions']} questions are source checked" in page.locator('#source-notice-copy').inner_text()
         if args.screenshots:
             page.screenshot(path=str(ROOT/'docs/preview.png'),full_page=True)
         done('fresh launch and inventory; no previous chat scores')
@@ -138,21 +145,70 @@ with tempfile.TemporaryDirectory(prefix='road-ready-browser-') as td:
         done('question-lab generation prompt export')
 
         pack=json.loads((ROOT/'docs/example-pack.json').read_text())
+        pack=page4.evaluate("""(pack) => {
+            const bank=window.ROAD_READY_BANK;
+            const questionIds=new Set(bank.questions.map(q=>q.id));
+            const conceptIds=new Set(bank.concepts.map(c=>c.id));
+            const stems=new Set(bank.questions.map(q=>window.RoadReady.fingerprint(q)));
+            let candidate;
+            let i=1;
+            do {
+                const suffix=`browser-smoke-${bank.questions.length}-${i}`;
+                candidate=structuredClone(pack);
+                const conceptMap=new Map();
+                candidate.packId=`${pack.packId}-${suffix}`;
+                candidate.title=`${pack.title} (${suffix})`;
+                candidate.concepts.forEach((concept,index) => {
+                    const original=concept.id;
+                    concept.id=`${original}-${suffix}-${index+1}`;
+                    conceptMap.set(original,concept.id);
+                });
+                candidate.questions.forEach((question,index) => {
+                    question.id=`${question.id}-${suffix}-${index+1}`;
+                    if(conceptMap.has(question.concept)) question.concept=conceptMap.get(question.concept);
+                    question.stem=`${question.stem} Browser smoke fixture ${suffix}-${index+1}.`;
+                });
+                i++;
+            } while (
+                candidate.questions.some(q=>questionIds.has(q.id) || stems.has(window.RoadReady.fingerprint(q))) ||
+                candidate.concepts.some(c=>conceptIds.has(c.id))
+            );
+            return candidate;
+        }""", pack)
+        imported_count=len(pack['questions'])
+        imported_total=initial_counts['questions']+imported_count
+        imported_checked=initial_counts['checked']
+        imported_pending=initial_pending+imported_count
         page4.locator('#pack-json').fill(json.dumps(pack))
         page4.locator('#validate-pack').click()
         assert 'Format valid' in page4.locator('#pack-preview').inner_text()
         assert page4.locator('#import-pack').is_disabled()
         page4.locator('#pack-ack').check();page4.locator('#import-pack').click()
-        assert '227' in page4.locator('#bank-count').inner_text()
-        assert '226 of 227 questions are source checked' in page4.locator('#source-notice-copy').inner_text()
-        assert '1 question still needs source review' in page4.locator('#source-notice-copy').inner_text()
+        assert json.loads(page4.locator('#pack-json').input_value())['packId'] == pack['packId']
+        assert f"{imported_total} questions" in page4.locator('#bank-count').inner_text()
+        assert f"{imported_checked} of {imported_total} questions are source checked" in page4.locator('#source-notice-copy').inner_text()
+        assert f"{imported_pending} {'question still needs' if imported_pending==1 else 'questions still need'} source review" in page4.locator('#source-notice-copy').inner_text()
         page4.locator('#validate-pack').click()
         assert 'Duplicate question id' in page4.locator('#pack-preview').inner_text()
-        done('validated session pack import, acknowledgment gate, duplicate rejection')
+        page4.locator('#prepare-submission').click()
+        assert 'Submission JSON copied' in page4.locator('#submission-status').inner_text() or 'Submission JSON downloaded' in page4.locator('#submission-status').inner_text()
+        assert 'public on GitHub' in page4.locator('#submission-status').inner_text()
+        assert 'does not complete source review' in page4.locator('#submission-status').inner_text()
+        assert page4.locator('#open-submission-form').get_attribute('target') == '_blank'
+        assert page4.locator('#open-submission-form').get_attribute('rel') == 'noopener noreferrer'
+        assert page4.locator('#open-submission-form').get_attribute('href') == 'https://github.com/the-projects-i-tried/nc-road-ready/issues/new?template=question-pack.yml'
+        assert page4.locator('#open-submission-form').get_attribute('href').find('%7B') == -1
+        page4.locator('#pack-json').fill(page4.locator('#pack-json').input_value() + '\n')
+        assert page4.locator('#open-submission-form').get_attribute('aria-disabled') == 'true'
+        assert 'Prepare and copy' in page4.locator('#submission-status').inner_text()
+        done('validated session pack import, permanent submission prep, stale edit invalidation')
 
         bad=json.loads(json.dumps(pack));bad['questions'][0]['asset']='https://example.com/track.svg'
         page4.locator('#pack-json').fill(json.dumps(bad));page4.locator('#validate-pack').click()
         assert 'illustration' in page4.locator('#pack-preview').inner_text()
+        hostile=json.loads(json.dumps(pack));hostile['questions'][0]['choices'][0]['html']='<b>not allowed</b>'
+        page4.locator('#pack-json').fill(json.dumps(hostile));page4.locator('#prepare-submission').click()
+        assert 'unknown field' in page4.locator('#submission-status').inner_text()
         malicious=json.loads(json.dumps(pack));malicious['packId']='safe-text-test';malicious['questions'][0]['id']='safe-text-q';malicious['questions'][0]['stem']='<img src=x onerror="window.__bad=true"> plain text fixture'
         page4.locator('#pack-json').fill(json.dumps(malicious));page4.locator('#validate-pack').click()
         assert '<img' in page4.locator('#pack-preview').inner_text()
@@ -163,8 +219,8 @@ with tempfile.TemporaryDirectory(prefix='road-ready-browser-') as td:
         page4.locator('.nav-button[data-pane="session"]').click()
         page4.once('dialog',lambda d:d.accept())
         page4.locator('#reset-session').click()
-        assert '226' in page4.locator('#bank-count').inner_text()
-        assert '226 of 226 questions are source checked' in page4.locator('#source-notice-copy').inner_text()
+        assert f"{initial_counts['questions']} questions" in page4.locator('#bank-count').inner_text()
+        assert f"{initial_counts['checked']} of {initial_counts['questions']} questions are source checked" in page4.locator('#source-notice-copy').inner_text()
         assert page4.locator('#stat-answered').inner_text()=='0'
         assert page4.locator('#welcome-card').is_visible()
         done('full reset removes imported packs and history')

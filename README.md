@@ -31,7 +31,7 @@ The standalone HTML and the hosted site have the same game, bank, and session-on
 - **Five-question learning rounds.** Four single-select choices; each has its own explanation. Hint use is recorded separately from unassisted success. Answer positions are shuffled, not the underlying legal facts.
 - **Within-session adaptation.** Missed rules receive more weight, recent rules get a cooldown, fresh scenarios come before repeats, and sustained correct answers shift selection toward harder scenarios. A 25-question check withholds feedback until the end; this is our practice format, not a claim about the precise DMV exam.
 - **Topic requests and controls.** Type a short request or choose topic chips, difficulty, and round length. Narrow searches that run out of authored material say so rather than inventing rules or silently repeating questions.
-- **An extensible question lab.** Export an authoring prompt, obtain source-grounded JSON from an assistant or human author, validate and preview it, then import it for the session. Add reviewed packs to the repository to make them available to everyone.
+- **An extensible question lab.** Export an authoring prompt, obtain source-grounded JSON from an assistant or human author, validate and preview it, then import it for the session. Prepare a permanent submission JSON for owner-reviewed GitHub intake when a pack should be proposed for everyone.
 - **Inspectable content.** Browse rule summaries, follow source links, see review status, and prepare a local question-error report. The site contains original schematic sign illustrations, not copied official artwork.
 
 A “practiced” label means two unassisted successes on distinct variants with intervening questions. It is a practice heuristic, not a calibrated mastery score or a prediction of passing an exam.
@@ -58,7 +58,9 @@ Fresh-only mode is the default. “Review” explicitly permits old questions bu
 
 The initial bank is finite, but the format is open-ended. In **Question lab**, describe the desired new material and export a prompt. It includes the format, the existing questions to avoid, and only the answers actually given in this session. Give that prompt to an assistant with access to the current official handbook, review the resulting JSON, and import it.
 
-Session imports disappear on refresh. To add a pack permanently:
+Session imports disappear on refresh. When the permanent-submission route is enabled, use Question lab to prepare the strict submission JSON, then paste it into the GitHub issue form. A GitHub account is required. The issue body and pack data are public and durable, but practice scores and answer history are not submitted. When repository and organization workflow permissions allow it, a trusted workflow opens a bot pull request from the issue snapshot; later issue edits do not overwrite that pull request. The owner reviews and approves before merge, and GitHub Pages deploys from `main`. See [Permanent Question Submissions](docs/SUBMISSIONS.md).
+
+Maintainers who are changing the repository locally should work on a feature branch and open a pull request:
 
 ```sh
 npm run validate -- /path/to/my-pack.json --against-core
@@ -66,16 +68,16 @@ npm run add-pack -- /path/to/my-pack.json
 npm run check
 git add content/packs site/js/bank.js docs/CONTENT_REVIEW.md
 git commit -m "Add source-reviewed practice scenarios"
-git push
+git push -u origin my-pack-branch
 ```
 
-`add-pack` validates against the full current bank, rejects duplicates, and marks new material pending source review. Review the content before calling it source-checked. Structural validation cannot establish factual correctness. Full instructions: [Authoring](docs/AUTHORING.md), [example pack](docs/example-pack.json), and [JSON schema](content/pack-schema.json).
+`add-pack` validates against the full current bank, rejects duplicates, and marks new material pending source review. Review the content before calling it source-checked. Structural validation and passing CI cannot establish factual correctness. Full instructions: [Authoring](docs/AUTHORING.md), [Permanent Question Submissions](docs/SUBMISSIONS.md), [example pack](docs/example-pack.json), and [JSON schema](content/pack-schema.json).
 
 No API key belongs in this static public app. Real-time AI generation would require a separately designed secure service, cost controls, moderation, and stronger source verification; it is deliberately not included.
 
 ## Privacy
 
-Answers exist only in JavaScript memory. There are **no cookies, localStorage, sessionStorage, account, analytics, service worker, or runtime API calls**. Refreshing or opening a new page starts a fresh session. Manual report/prompt downloads are user-controlled. Normal static-site host logs and outbound links remain outside the app's control. See [Privacy](docs/PRIVACY.md).
+Answers exist only in JavaScript memory. There are **no cookies, localStorage, sessionStorage, analytics, service worker, or runtime API calls**. Refreshing or opening a new page starts a fresh session. Manual report/prompt/submission copying and downloads are user-controlled. When used, a permanent-pack issue submission happens on GitHub, requires a GitHub account, and creates a public issue. Normal static-site host logs, GitHub issue data, and outbound links remain outside the app's control. See [Privacy](docs/PRIVACY.md).
 
 No prior conversation grades or personal details are bundled. A new visitor starts at zero.
 

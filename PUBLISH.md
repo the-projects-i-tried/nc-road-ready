@@ -38,7 +38,7 @@ Use either the browser-created-repository route or the CLI route, not both.
 
 ## 3. Enable GitHub Pages
 
-In the new repository, open **Settings → Pages → Build and deployment → Source**, and select **GitHub Actions**. The deploy workflow is included at `.github/workflows/pages.yml`.
+In the new repository, open **Settings → Pages → Build and deployment → Source**, and select **GitHub Actions**. The deploy workflow is included at `.github/workflows/pages.yml`. Keep Pages deployment tied to `main`; permanent pack submissions are merged through pull requests and then deployed from `main`.
 
 The first push may have attempted deployment before Pages was enabled. After choosing the source, open **Actions → Deploy Pages → Run workflow** on `main`, or rerun the failed workflow. A successful deployment supplies the actual site URL in the Pages settings and workflow output.
 
@@ -50,7 +50,21 @@ https://the-projects-i-tried.github.io/nc-road-ready/
 
 An organization policy can require extra approval or restrict allowed Actions. Only an authorized organization administrator can change those settings. The workflow has no personal token: GitHub supplies the deployment token and OIDC identity for the Pages job.
 
-## 4. Add a link to the shared front page
+## 4. Configure submission and branch protections
+
+Permanent pack submissions use a GitHub issue form plus a trusted workflow that opens a bot pull request from the issue-created snapshot. This requires both organization and repository workflow permissions allowing GitHub Actions to create pull requests. If the organization blocks Actions from creating or approving pull requests, the issue can still exist but the bot PR will fail with a permissions error until an owner or organization administrator enables the setting and retries the workflow. A personal-access-token fallback is not recommended for pack intake because an owner-authored pull request still cannot satisfy the owner's required approval.
+
+The intended protection for `main` is:
+
+- Require pull requests before merge.
+- Require `@volfovsky` CODEOWNER approval for permanent pack changes.
+- Dismiss stale approvals when commits change.
+- Include administrators.
+- Require the `Build and tests` status posted after validation.
+
+The bot is not a CODEOWNER, does not approve or merge its own pull request, and may still need the owner to approve its check workflow under GitHub's bot/fork workflow policy. Standard pull-request checks should remain read-only. The trusted workflow-run bridge should not execute pull-request code or consume pull-request artifacts.
+
+## 5. Add a link to the shared front page
 
 Add a project entry to the existing organization front-page repository. For plain HTML, the essential link is:
 
@@ -75,7 +89,7 @@ A regular link provides more room on a phone. The iframe is a convenience, not r
 
 ## Updates and moving your local copy
 
-After modifying `content/core.json` or adding packs, run `npm run build` and `npm run check`, commit the generated `site/js/bank.js` together with the data, and push. The Pages workflow redeploys from `main`.
+After modifying `content/core.json` or adding packs, run `npm run build` and `npm run check`, commit the generated `site/js/bank.js` together with the data, and open a feature-branch pull request. The Pages workflow redeploys from `main` after merge. For public permanent pack submissions, use the GitHub issue form and owner-reviewed bot pull request described in [Permanent Question Submissions](docs/SUBMISSIONS.md).
 
 Once the first push has succeeded, the local directory is not the website's server. You may move the entire local repository wherever you work, or delete it and later clone:
 

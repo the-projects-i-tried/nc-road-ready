@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="styles.css">
   <script defer src="js/engine.js"></script>
   <script defer src="js/bank.js"></script>
+  <script defer src="js/submission.js"></script>
   <script defer src="js/app.js"></script>
 </head>
 <body>
@@ -113,6 +114,11 @@
         <div id="pack-preview" class="pack-preview" role="status" hidden></div><div id="import-controls" hidden><label class="checkbox"><input id="pack-ack" type="checkbox"> I understand that format validation is not a factual review.</label><button id="import-pack" class="button dark" disabled>Add to this session</button></div>
       </section>
     </div>
+    <section class="panel submission-panel" aria-labelledby="submission-title"><h2 id="submission-title">3. Submit it for permanent review</h2><p>Prepare a public GitHub submission only after you have inspected the JSON and the cited sources. This copies a canonical version marked source review pending. The issue form requires a GitHub account, opens a bot pull request when repository settings allow it, and still needs @volfovsky approval before anything is merged.</p>
+      <div class="utility-row"><button id="prepare-submission" class="button dark">Prepare & copy JSON</button><a id="open-submission-form" class="button outline" href="https://github.com/the-projects-i-tried/nc-road-ready/issues/new?template=question-pack.yml" target="_blank" rel="noopener noreferrer" aria-disabled="true">Open GitHub form</a></div>
+      <p class="micro">The JSON will be public on GitHub after you paste it into the issue form. Nothing is submitted by this page, and the JSON is not put in the URL.</p>
+      <div id="submission-status" class="pack-preview" role="status" hidden></div>
+    </section>
     <section id="issue-panel" class="panel" hidden><h2>Question report</h2><p>This report is local. Copy it into a repository issue or share it with the maintainer; the app does not submit anything automatically.</p><label class="sr-only" for="issue-text">Question report text</label><textarea id="issue-text" rows="8" readonly></textarea><button id="copy-issue" class="button dark">Copy report</button></section>
     <section class="panel library-panel"><div class="panel-heading"><h2>Browse the rule library</h2><span id="library-total" class="badge"></span></div><label class="sr-only" for="library-search">Search rules</label><input id="library-search" type="search" placeholder="Find a rule: school bus, ABS, yellow arrow…"><div id="rule-library"></div></section>
   </section>

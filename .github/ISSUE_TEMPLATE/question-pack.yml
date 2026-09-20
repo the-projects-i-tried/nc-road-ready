@@ -1,0 +1,31 @@
+name: Question pack submission
+description: Submit validated Road Ready JSON for a maintainer-reviewed pack PR.
+title: '[Question pack] '
+labels: ['question-pack']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit only non-private, source-grounded Road Ready pack JSON. Automation will validate the structure, force all submitted items to source-review pending, and open a PR for owner review if the pack passes repository checks.
+  - type: textarea
+    id: json
+    attributes:
+      label: Question pack JSON
+      description: Paste one raw JSON object. Do not include personal information, secrets, API keys, HTML, scripts, or external images.
+      render: json
+      value: |
+        {
+          "schemaVersion": 1,
+          "packId": "example-pack-id",
+          "title": "Example pack title",
+          "sources": {},
+          "concepts": [],
+          "questions": []
+        }
+    validations:
+      required: true
+  - type: textarea
+    id: source_review_notes
+    attributes:
+      label: Source notes for reviewer
+      description: Optional. Include handbook page/section notes that help a maintainer review the submitted claims. These notes are not treated as verification.

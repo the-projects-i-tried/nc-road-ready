@@ -8,7 +8,7 @@ const data=f=>'data:image/svg+xml;base64,'+fs.readFileSync(path.join(site,f)).to
 let html=fs.readFileSync(path.join(site,'index.html'),'utf8');
 const css=fs.readFileSync(path.join(site,'styles.css'),'utf8');
 const images={};for(const f of fs.readdirSync(path.join(site,'assets')))if(f.endsWith('.svg'))images['assets/'+f]=data('assets/'+f);
-const scripts=['engine.js','bank.js'].map(f=>fs.readFileSync(path.join(site,'js',f),'utf8'));
+const scripts=['engine.js','bank.js','submission.js'].map(f=>fs.readFileSync(path.join(site,'js',f),'utf8'));
 scripts.push('window.ROAD_READY_IMAGES = '+JSON.stringify(images)+';');
 scripts.push(fs.readFileSync(path.join(site,'js/app.js'),'utf8'));
 html=html.replace(/<script defer src="[^"]+"><\/script>/g,'');

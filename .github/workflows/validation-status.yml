@@ -1,0 +1,36 @@
+name: Publish validation status
+on:
+  workflow_run:
+    workflows: [Check]
+    types: [completed]
+permissions:
+  actions: read
+  statuses: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      # This workflow runs trusted default-branch code only. Never check out the
+      # proposed branch or download/execute artifacts from the preceding run.
+      - uses: actions/github-script@v8
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            if (run.repository.full_name !== context.repo.owner + '/' + context.repo.repo) {
+              throw new Error('Unexpected workflow repository.');
+            }
+            const { data: workflow } = await github.rest.actions.getWorkflow({
+              ...context.repo, workflow_id: run.workflow_id
+            });
+            if (workflow.path !== '.github/workflows/check.yml' ||
+                !['push', 'pull_request'].includes(run.event)) {
+              throw new Error('Unexpected validation workflow.');
+            }
+            await github.rest.repos.createCommitStatus({
+              ...context.repo,
+              sha: run.head_sha,
+              context: 'Build and tests',
+              state: run.conclusion === 'success' ? 'success' : 'failure',
+              description: run.conclusion === 'success' ? 'Check workflow passed; review code and test changes.' : 'Check workflow did not pass.',
+              target_url: run.html_url
+            });

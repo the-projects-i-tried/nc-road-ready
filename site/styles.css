@@ -948,6 +948,17 @@ fieldset {
 #import-controls .checkbox {
   font-size:12px
 }
+.submission-panel {
+  margin-top:26px
+}
+.submission-panel>p {
+  font-size:14px;
+  color:var(--muted)
+}
+#open-submission-form[aria-disabled=true] {
+  opacity:.48;
+  cursor:not-allowed
+}
 .library-panel {
   margin-top:26px
 }
@@ -1351,4 +1362,3 @@ main {
 }
 
 }
-

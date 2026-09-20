@@ -15,11 +15,12 @@ test('standalone preview embeds local resources with valid CSP hashes and unmodi
   const file=path.join(dir,'preview.html');execFileSync(process.execPath,[path.join(root,'scripts/preview.cjs'),file]);
   const html=fs.readFileSync(file,'utf8');
   assert.equal(/<script[^>]+src=/.test(html),false);assert.equal(/<link[^>]+href="styles.css"/.test(html),false);
-  const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]);assert.equal(scripts.length,4);
+  const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]);assert.equal(scripts.length,5);
   const style=html.match(/<style>([\s\S]*?)<\/style>/)[1];
   for(const content of [...scripts,style]){const hash=crypto.createHash('sha256').update(content).digest('base64');assert.ok(html.includes("'sha256-"+hash+"'"));}
   assert.equal(scripts[0],fs.readFileSync(path.join(root,'site/js/engine.js'),'utf8'));
-  assert.equal(scripts[3],fs.readFileSync(path.join(root,'site/js/app.js'),'utf8'));
+  assert.equal(scripts[2],fs.readFileSync(path.join(root,'site/js/submission.js'),'utf8'));
+  assert.equal(scripts[4],fs.readFileSync(path.join(root,'site/js/app.js'),'utf8'));
   const context={window:{}};vm.runInNewContext(scripts[1],context);assert.ok(context.window.ROAD_READY_BANK.questions.length>=226);
   assert.ok(html.includes('data:image/svg+xml;base64,'));
  }finally{fs.rmSync(dir,{recursive:true,force:true});}
@@ -34,16 +35,25 @@ test('adding a pack permanently validates, demotes review status, compiles, and 
  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'road-ready-add-'));
  try{
   for(const dir of ['site','scripts','content','docs'])fs.cpSync(path.join(root,dir),path.join(tmp,dir),{recursive:true});
-  const script=path.join(tmp,'scripts/add-pack.cjs'),sample=path.join(tmp,'docs/example-pack.json');
+  const script=path.join(tmp,'scripts/add-pack.cjs'),sample=path.join(tmp,'test-pack.json');
+  const initial={window:{}};vm.runInNewContext(fs.readFileSync(path.join(tmp,'site/js/bank.js'),'utf8'),initial);
+  const initialBank=initial.window.ROAD_READY_BANK;
+  const fixture=JSON.parse(fs.readFileSync(path.join(tmp,'docs/example-pack.json'),'utf8'));
+  let index=0;
+  do{fixture.packId=`distribution-fixture-${index++}`;}while(fs.existsSync(path.join(tmp,'content/packs',fixture.packId+'.json'))||initialBank.questions.some(q=>q.id===fixture.packId||q.stem===`Distribution test fixture ${fixture.packId}: what action follows the cited school-bus rule?`));
+  fixture.questions[0].id=fixture.packId;
+  fixture.questions[0].stem=`Distribution test fixture ${fixture.packId}: what action follows the cited school-bus rule?`;
+  fs.writeFileSync(sample,JSON.stringify(fixture));
   execFileSync(process.execPath,[script,sample]);
-  const pack=JSON.parse(fs.readFileSync(path.join(tmp,'content/packs/example-bus-pack.json'),'utf8'));
+  const packFile=path.join(tmp,'content/packs',fixture.packId+'.json');
+  const pack=JSON.parse(fs.readFileSync(packFile,'utf8'));
   assert.equal(pack.questions[0].reviewStatus,'needs-source-review');
   const context={window:{}};vm.runInNewContext(fs.readFileSync(path.join(tmp,'site/js/bank.js'),'utf8'),context);
-  assert.equal(context.window.ROAD_READY_BANK.questions.length,227);
+  assert.equal(context.window.ROAD_READY_BANK.questions.length,initialBank.questions.length+fixture.questions.length);
   assert.throws(()=>execFileSync(process.execPath,[script,sample],{stdio:'pipe'}));
   // Directly editing a committed pack must not bypass the importer demotion.
   pack.questions[0].reviewStatus='source-checked';
-  fs.writeFileSync(path.join(tmp,'content/packs/example-bus-pack.json'),JSON.stringify(pack));
+  fs.writeFileSync(packFile,JSON.stringify(pack));
   assert.throws(()=>execFileSync(process.execPath,[path.join(tmp,'scripts/build.cjs')],{stdio:'pipe'}),/lacks editorial review evidence/);
  }finally{fs.rmSync(tmp,{recursive:true,force:true});}
 });

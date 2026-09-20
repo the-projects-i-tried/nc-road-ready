@@ -1,0 +1,32 @@
+name: Question Pack Submission
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  statuses: write
+
+concurrency:
+  group: question-pack-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    if: github.repository == 'the-projects-i-tried/nc-road-ready'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Validate submission and open PR
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/submit-question-pack.cjs
